@@ -282,7 +282,9 @@ static void mouse_get_xy(lv_coord_t * x, lv_coord_t * y)
         if (mouse_y >= LCD_1IN3_HEIGHT) {
             mouse_y = LCD_1IN3_HEIGHT - 1;
         }
-    } else if (!dev_read_key(KEY_LEFT)) {
+    }
+    
+    if (!dev_read_key(KEY_LEFT)) {
         mouse_x -= 4;
         if (mouse_x < 0) {
             mouse_x = 0;
