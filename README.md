@@ -143,7 +143,9 @@ LVGL is configured via a file called `lv_conf_cmsis.h` which is derived from the
 
 Once we select the porting component in the RTE, templates files will be added to the project. In this project, I have already implemented a porting for a popular [LCD 1.3inc module](https://www.waveshare.com/wiki/Pico-LCD-1.3). 
 
-###### 
+**NOTE**: Since there is no touch-pad on this LCD extension board, we use the joystick and key `Y` to mimic a mouse.  
+
+
 
 ###### A popular 240x240 LCD extension board for Raspberry Pi Pico
 
