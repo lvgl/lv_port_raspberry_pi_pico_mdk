@@ -148,9 +148,7 @@ int main(void)
 #endif
     
     while(1) {
-        
         lv_timer_handler_run_in_period(5);
-        
     }
     
 }

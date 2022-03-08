@@ -48,6 +48,34 @@ For ease of use, we deploy the LVGL to the project template using the the LVGL c
 
 This project template use a module called `perf_counter` to facilitate the LVGL porting and usage. It is also deployed with a cmsis-pack for the ease of use. If you haven't install it, you can find it from the `cmsis-pack` folder. 
 
+The key is that as long as the `lv_conf_cmsis.h` detects the perf_counter module, it set `LV_TICK_CUSTOM` to `1` and use the API `get_system_ms()` from `perf_counter` to implement `lv_tick_get()`, in other words, users do NOT have to deal with `lv_tick_inc()` as suggested by the [LVGL porting document](https://docs.lvgl.io/master/porting/tick.html). 
+
+
+
+```c
+/*Use a custom tick source that tells the elapsed time in milliseconds.
+ *It removes the need to manually update the tick with `lv_tick_inc()`)*/
+#ifdef __PERF_COUNTER__
+    #define LV_TICK_CUSTOM 1
+    #if LV_TICK_CUSTOM
+        extern uint32_t SystemCoreClock;
+        #define LV_TICK_CUSTOM_INCLUDE              "perf_counter.h" 
+        
+        #if __PER_COUNTER_VER__ < 10902ul
+            #define LV_TICK_CUSTOM_SYS_TIME_EXPR    ((uint32_t)get_system_ticks() / (SystemCoreClock / 1000ul))
+        #else
+            #define LV_TICK_CUSTOM_SYS_TIME_EXPR    get_system_ms()
+        #endif
+    #endif   /*LV_TICK_CUSTOM*/
+#else
+    #define LV_TICK_CUSTOM 0
+    #if LV_TICK_CUSTOM
+        #define LV_TICK_CUSTOM_INCLUDE "Arduino.h"         /*Header for the system time function*/
+        #define LV_TICK_CUSTOM_SYS_TIME_EXPR (millis())    /*Expression evaluating to current system time in ms*/
+    #endif   /*LV_TICK_CUSTOM*/
+#endif       /*__PERF_COUNTER__*/
+```
+
 
 
 #### 2.3 Updating installed cmsis-pack in the future
@@ -93,7 +121,84 @@ Since the LVGL is deployed using the cmsis-pack, it is managed in the **RTE (Run
 
 ###### LVGL in RTE window
 
-![image-20220308131303691](./documents/Pictures/RTE_LVGL.png) 
+![](./documents/Pictures/RTE_LVGL.png) 
 
 
 
+Usually, we only select the components required for our application to save space, as shown in the picture above, the component `Essential` is ***mandatory*** and the components `Extra Themes` and `Porting` are selected for most of the applications. 
+
+#### 4.2 LVGL configuration
+
+LVGL is configured via a file called `lv_conf_cmsis.h` which is derived from the `lv_conf_template.h`. You can find this header file in MDK project viewer.
+
+
+
+###### The lv_conf_cmsis.h in the Project View
+
+![](./documents/Pictures/Project_View_lv_conf_cmsis.png) 
+
+
+
+#### 4.3 Porting
+
+Once we select the porting component in the RTE, templates files will be added to the project. In this project, I have already implemented a porting for a popular [LCD 1.3inc module](https://www.waveshare.com/wiki/Pico-LCD-1.3). 
+
+###### 
+
+###### A popular 240x240 LCD extension board for Raspberry Pi Pico
+
+![](https://www.waveshare.com/w/thumb.php?f=Pico-LCD-1.3-1.jpg&width=500) 
+
+#### 4.5 Benchmark and Demos
+
+The LVGL cmsis-pack provides two demos, the `benchmark` and `Widgets`. Selecting one of them in the RTE configuration will insert the necessary code in `main.c`:
+
+
+
+```c
+int main(void)
+{
+    system_init();
+    
+    printf("Hello Pico-Template\r\n");
+    
+    lv_init();
+    lv_port_disp_init();
+    lv_port_indev_init();
+
+/* We have no sufficient SRAM to run those demos in all-in-ram mode*/
+#if !defined(PICO_NO_FLASH)
+#   if LV_USE_DEMO_BENCHMARK
+    lv_demo_benchmark();
+#   endif
+    
+#   if LV_USE_DEMO_WIDGETS
+    lv_demo_widgets();
+#   endif
+#endif
+    
+    while(1) {
+        lv_timer_handler_run_in_period(5);
+    }
+    
+}
+```
+
+
+
+As you can see here: the functions `lv_demo_benchmark()` and `lv_demo_widgets()` are protected by a macro switch `PICO_NO_FLASH` which is defined in the project configurations [**AC6-DebugInSRAM**] and [**AC6-DebugInSRAM-printf**]. Those two project configurations store all the code in SRAM. We only has less than 248K SRAM for both code and data, and the code size of those two demos are too big to be fitted into SRAM. As a consequence, you can only run those demos on the following project configurations:
+
+- [**AC6-flash**]  Stores and runs code in external flash
+- [**AC6-RunInSRAM**] Stores RO-CODE and RO-DATA in external flash, and running code in SRAM (RO-DATA is still in external flash)
+
+
+
+
+
+
+
+## License
+
+- LVGL used in this project is under MIT license.
+- This project template is under Apache 2.0 license.
+- perf_counter used in this project is under Apache 2.0 license.

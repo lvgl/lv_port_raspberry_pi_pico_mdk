@@ -115,7 +115,7 @@ Those bridge functions are decorated as "weak", hence if you want to retarget **
 
 When using configuration**AC6-DebugInSRAM-printf**, all ***printf*** output is retargeted to '**Debug (printf) Viewer**' inside MDK (as shown below) with the help from EventRecorder.
 
-![image-20220104201854052](documents/Pictures/Debug_printf_Viewer.png) 
+![image-20220104201854052](../../documents/Pictures/Debug_printf_Viewer.png) 
 
 
 
@@ -139,7 +139,7 @@ Pico-Template provides a dedicated project configuration for downloading and deb
 
 **1. In this mode, the "RESET" doesn't really work as we expect. If you do want to RESET, please press the "Reset Pico " button shown below:**
 
-![image-20210919180644156](documents/Pictures/Reset_Pico.png) 
+![image-20210919180644156](../../documents/Pictures/Reset_Pico.png) 
 
 **2. If you cannot find this Toolbox, please start your debug session and go to menu "View"->"Toolbox Window".**
 
@@ -171,7 +171,7 @@ In brief,  it is an
 
  To enable the built in support, please set the macro `__PICO_USE_LCD_1IN3__` to `1` in MDK project configuration as shown below:
 
-![](./documents/Pictures/enable_lcd_1in3) 
+![](../../documents/Pictures/enable_lcd_1in3) 
 
 After that, you can 
 
