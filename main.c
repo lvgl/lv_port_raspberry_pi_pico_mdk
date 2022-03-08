@@ -25,6 +25,7 @@
 #include "lvgl.h"
 #include "lv_port_disp_template.h"
 #include "lv_port_indev_template.h"
+#include "demos/lv_demos.h"
 
 
 #include <stdio.h>
@@ -34,16 +35,6 @@
 #   include <EventRecorder.h>
 #endif
 
-
-#if !defined(PICO_NO_FLASH)
-#if LV_USE_DEMO_BENCHMARK
-#   include "lv_demo_benchmark.h"
-#endif
-
-#if LV_USE_DEMO_WIDGETS
-#   include "lv_demo_widgets.h"
-#endif
-#endif
 
 /*============================ MACROS ========================================*/
 #define TOP         (0x1FFF)
