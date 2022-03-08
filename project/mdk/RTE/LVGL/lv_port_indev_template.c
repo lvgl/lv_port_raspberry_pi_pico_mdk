@@ -12,6 +12,7 @@
 #include "lv_port_indev_template.h"
 #include "lvgl.h"
 #include "DEV_Config.h"
+#include "LCD_1in3.h"
 
 /*********************
  *      DEFINES
@@ -97,7 +98,9 @@ void lv_port_indev_init(void)
     indev_drv.type = LV_INDEV_TYPE_POINTER;
     indev_drv.read_cb = touchpad_read;
     indev_touchpad = lv_indev_drv_register(&indev_drv);
+#endif
 
+#if 1
     /*------------------
      * Mouse
      * -----------------*/
@@ -115,7 +118,9 @@ void lv_port_indev_init(void)
     lv_obj_t * mouse_cursor = lv_img_create(lv_scr_act());
     lv_img_set_src(mouse_cursor, LV_SYMBOL_HOME);
     lv_indev_set_cursor(indev_mouse, mouse_cursor);
+#endif
 
+#if 0
     /*------------------
      * Keypad
      * -----------------*/
@@ -133,7 +138,9 @@ void lv_port_indev_init(void)
      *add objects to the group with `lv_group_add_obj(group, obj)`
      *and assign this input device to group to navigate in it:
      *`lv_indev_set_group(indev_keypad, group);`*/
+#endif
 
+#if 0
     /*------------------
      * Encoder
      * -----------------*/
@@ -153,6 +160,7 @@ void lv_port_indev_init(void)
      *`lv_indev_set_group(indev_encoder, group);`*/
 #endif
 
+#if 0
     /*------------------
      * Button
      * -----------------*/
@@ -172,6 +180,7 @@ void lv_port_indev_init(void)
             {40, 100},  /*Button 1 -> x:40; y:100*/
     };
     lv_indev_set_button_points(indev_button, btn_points);
+#endif
 }
 
 /**********************
@@ -252,17 +261,41 @@ static void mouse_read(lv_indev_drv_t * indev_drv, lv_indev_data_t * data)
 static bool mouse_is_pressed(void)
 {
     /*Your code comes here*/
-
-    return false;
+    
+    return !dev_read_key(KEY_Y);
 }
 
 /*Get the x and y coordinates if the mouse is pressed*/
 static void mouse_get_xy(lv_coord_t * x, lv_coord_t * y)
 {
     /*Your code comes here*/
+    static int16_t mouse_x = LCD_1IN3_WIDTH >> 1;
+    static int16_t mouse_y = LCD_1IN3_HEIGHT >> 1;
 
-    (*x) = 0;
-    (*y) = 0;
+    if      (!dev_read_key(KEY_UP)) {
+        mouse_y -= 4;
+        if (mouse_y < 0) {
+            mouse_y = 0;
+        }
+    } else if (!dev_read_key(KEY_DOWN)) {
+        mouse_y += 4;
+        if (mouse_y >= LCD_1IN3_HEIGHT) {
+            mouse_y = LCD_1IN3_HEIGHT - 1;
+        }
+    } else if (!dev_read_key(KEY_LEFT)) {
+        mouse_x -= 4;
+        if (mouse_x < 0) {
+            mouse_x = 0;
+        }
+    } else if (!dev_read_key(KEY_RIGHT)) {
+        mouse_x += 4;
+        if (mouse_x >= LCD_1IN3_WIDTH) {
+            mouse_x = LCD_1IN3_WIDTH - 1;
+        }
+    }
+
+    (*x) = mouse_x;
+    (*y) = mouse_y;
 }
 
 /*------------------
@@ -288,25 +321,6 @@ static void keypad_read(lv_indev_drv_t * indev_drv, lv_indev_data_t * data)
     if(act_key != 0) {
         data->state = LV_INDEV_STATE_PR;
 
-        /*Translate the keys to LVGL control characters according to your key definitions*/
-        switch(act_key) {
-        case 1:
-            act_key = LV_KEY_NEXT;
-            break;
-        case 2:
-            act_key = LV_KEY_PREV;
-            break;
-        case 3:
-            act_key = LV_KEY_LEFT;
-            break;
-        case 4:
-            act_key = LV_KEY_RIGHT;
-            break;
-        case 5:
-            act_key = LV_KEY_ENTER;
-            break;
-        }
-
         last_key = act_key;
     } else {
         data->state = LV_INDEV_STATE_REL;
@@ -318,8 +332,28 @@ static void keypad_read(lv_indev_drv_t * indev_drv, lv_indev_data_t * data)
 /*Get the currently being pressed key.  0 if no key is pressed*/
 static uint32_t keypad_get_key(void)
 {
-    /*Your code comes here*/
 
+    /*Your code comes here*/
+    if          (!dev_read_key(KEY_UP)) {
+        return LV_KEY_UP;
+    } else if   (!dev_read_key(KEY_DOWN)) {
+        return LV_KEY_DOWN;
+    } else if   (!dev_read_key(KEY_LEFT)) {
+        return LV_KEY_LEFT;
+    } else if   (!dev_read_key(KEY_RIGHT)) {
+        return LV_KEY_RIGHT;
+    } else if   (!dev_read_key(KEY_HOME)) {
+        return LV_KEY_ENTER;
+    } else if   (!dev_read_key(KEY_A)) {
+        return LV_KEY_ESC;
+    } else if   (!dev_read_key(KEY_B)) {
+        return LV_KEY_BACKSPACE;
+    } else if   (!dev_read_key(KEY_X)) {
+        return LV_KEY_PREV;
+    } else if   (!dev_read_key(KEY_X)) {
+        return LV_KEY_NEXT;
+    }
+    
     return 0;
 }
 
