@@ -46,7 +46,7 @@ For ease of use, we deploy the LVGL to the project template using the the LVGL c
 
 #### 2.2 perf_counter cmsis-pack
 
-This project template use a module called `perf_counter` to facilitate the LVGL porting and usage. It is also deployed with a cmsis-pack for the ease of use. If you haven't install it, you can find it from the `cmsis-pack` folder. 
+This project template uses a module called `perf_counter` to facilitate the LVGL porting. It is also deployed with a cmsis-pack. If you haven't install it, please find it from the `cmsis-pack` folder. 
 
 The key is that as long as the `lv_conf_cmsis.h` detects the perf_counter module, it set `LV_TICK_CUSTOM` to `1` and use the API `get_system_ms()` from `perf_counter` to implement `lv_tick_get()`, in other words, users do NOT have to deal with `lv_tick_inc()` as suggested by the [LVGL porting document](https://docs.lvgl.io/master/porting/tick.html). 
 
@@ -107,7 +107,7 @@ This LVGL porting project is derived from a open-source project call [Pico-Templ
 - How to retarget stdout and stdin 
 - etc.
 
-Please refer to the original [Pico-Template](https://github.com/GorgonMeducer/Pico_Template) for help. Or you can find a [readme](./project/mdk/readme.md) in the `project/mdk` folder. 
+Please refer to the original [Pico-Template](https://github.com/GorgonMeducer/Pico_Template) for help. Or you can find a [readme](./project/mdk/README.md) in the `project/mdk` folder. 
 
 
 
