@@ -78,7 +78,7 @@ The key is that as long as the `lv_conf_cmsis.h` detects the perf_counter module
 
 
 
-#### 2.3 Updating installed cmsis-pack in the future
+#### 2.3 Updating installed cmsis-packs in the future
 
 The aforementioned cmsis-packs are updated regularly, for example, the LVGL cmsis-pack is updated in monthly manner. Once installed, you don't have to check the LVGL repo and download the latest cmsis-pack manually. Instead, you can open the `pack-installer` from MDK, select menu `Packs->Check for Updates` and see whether there are any updates on those cmsis-packs. 
 
@@ -186,14 +186,10 @@ int main(void)
 
 
 
-As you can see here: the functions `lv_demo_benchmark()` and `lv_demo_widgets()` are protected by a macro switch `PICO_NO_FLASH` which is defined in the project configurations [**AC6-DebugInSRAM**] and [**AC6-DebugInSRAM-printf**]. Those two project configurations store all the code in SRAM. We only has less than 248K SRAM for both code and data, and the code size of those two demos are too big to be fitted into SRAM. As a consequence, you can only run those demos on the following project configurations:
+As you can see here: the functions `lv_demo_benchmark()` and `lv_demo_widgets()` are protected by a macro switch `PICO_NO_FLASH` which is defined in the project configurations [**AC6-DebugInSRAM**] and [**AC6-DebugInSRAM-printf**]. Those two project configurations store all the code in SRAM. We only have less than **248KB** SRAM for both code and data, and the code size of those two demos are too big to be fitted into SRAM. As a consequence, we can only run those demos on the following project configurations:
 
-- [**AC6-flash**]  Stores and runs code in external flash
-- [**AC6-RunInSRAM**] Stores RO-CODE and RO-DATA in external flash, and running code in SRAM (RO-DATA is still in external flash)
-
-
-
-
+- [**AC6-flash**]  Stores and runs code in the 2MByte external flash
+- [**AC6-RunInSRAM**] Stores **RO-CODE** and **RO-DATA** in the external flash, and runs code in SRAM (RO-DATA is still in the external flash)
 
 
 
@@ -202,3 +198,7 @@ As you can see here: the functions `lv_demo_benchmark()` and `lv_demo_widgets()`
 - LVGL used in this project is under MIT license.
 - This project template is under Apache 2.0 license.
 - perf_counter used in this project is under Apache 2.0 license.
+
+
+
+Enjoy~
