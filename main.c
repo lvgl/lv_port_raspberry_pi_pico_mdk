@@ -130,7 +130,7 @@ int main(void)
 {
     system_init();
     
-    printf("Hello Pico-Template\r\n");
+    printf("LVGL+Arm-2D for Pico\r\n");
     
     lv_init();
     lv_port_disp_init();

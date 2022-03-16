@@ -16,6 +16,12 @@
  */
 #define CMSIS_device_header "ARMCM0plus_MPU.h"
 
+/* Arm::Acceleration:Arm-2D:Alpha-Blending:0.9.10-dev */
+#define __RTE_ACCELERATION_ARM_2D_ALPHA_BLENDING__
+/* Arm::Acceleration:Arm-2D:Core:0.9.10-dev */
+#define __RTE_ACCELERATION_ARM_2D__
+/* Arm::Acceleration:Arm-2D:Rotation:0.9.10-dev */
+#define __RTE_ACCELERATION_ARM_2D_ROTATION__
 /* GorgonMeducer.Performance Counter::Utilities:perf_counter:Core:Library:1.9.3 */
 #define __PERF_COUNTER__
 /* Keil.ARM Compiler::Compiler:Event Recorder:DAP:1.4.0 */
@@ -36,6 +42,9 @@
 /* LVGL.LVGL::LVGL:lvgl:Extra Themes:8.3.0-dev */
 /*! \brief use extra themes, widgets and layouts */
 #define RTE_GRAPHICS_LVGL_USE_EXTRA_THEMES
+/* LVGL.LVGL::LVGL:lvgl:GPU Arm-2D:1.0.0-dev */
+/*! \brief enable Arm-2D support*/
+#define LV_USE_GPU_ARM2D 1
 
 
 #endif /* RTE_COMPONENTS_H */
