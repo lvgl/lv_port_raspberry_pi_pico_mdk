@@ -14,6 +14,10 @@
 #include "GLCD_Config.h"
 #include "perf_counter.h"
 
+#if defined(__RTE_ACCELERATION_ARM_2D__)
+#   include "arm_2d.h"
+#endif
+
 /*********************
  *      DEFINES
  *********************/
@@ -118,7 +122,9 @@ void lv_port_disp_init(void)
 /*Initialize your display and the required peripherals.*/
 static void disp_init(void)
 {
-    /*You code here*/
+#if defined(__RTE_ACCELERATION_ARM_2D__)
+    arm_2d_init();
+#endif
 }
 
 extern 
