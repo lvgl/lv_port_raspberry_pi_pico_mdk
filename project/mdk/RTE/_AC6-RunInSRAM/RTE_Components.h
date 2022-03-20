@@ -16,12 +16,12 @@
  */
 #define CMSIS_device_header "ARMCM0plus_MPU.h"
 
-/* Arm::Acceleration:Arm-2D:Alpha-Blending:0.9.10-dev */
+/* Arm::Acceleration:Arm-2D:Alpha-Blending:0.9.11-dev */
 #define __RTE_ACCELERATION_ARM_2D_ALPHA_BLENDING__
-/* Arm::Acceleration:Arm-2D:Core:0.9.10-dev */
+/* Arm::Acceleration:Arm-2D:Core:0.9.11-dev */
 #define __RTE_ACCELERATION_ARM_2D__
-/* Arm::Acceleration:Arm-2D:Rotation:0.9.10-dev */
-#define __RTE_ACCELERATION_ARM_2D_ROTATION__
+/* Arm::Acceleration:Arm-2D:Transform:0.9.11-dev */
+#define __RTE_ACCELERATION_ARM_2D_TRANSFORM__
 /* GorgonMeducer.Performance Counter::Utilities:perf_counter:Core:Library:1.9.3 */
 #define __PERF_COUNTER__
 /* Keil.ARM Compiler::Compiler:Event Recorder:DAP:1.4.0 */

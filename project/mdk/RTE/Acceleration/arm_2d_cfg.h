@@ -40,14 +40,14 @@ extern "C" {
 // <i> Note that if you don't have any hardware accelerator, disable this feature can reduce code size and gain a small performance uplift.
 // <i> This feature is enabled by default.
 #ifndef __ARM_2D_HAS_ASYNC__
-#   define __ARM_2D_HAS_ASYNC__                                     0
+#   define __ARM_2D_HAS_ASYNC__                                     1
 #endif
 
-// <q>Enable anti-alias support for all rotation operations.
+// <q>Enable anti-alias support for all tranform operations.
 // <i> Note that enabling this feature suffers a non-negligible performance drop.
 // <i> This feature is disabled by default.
-#ifndef __ARM_2D_HAS_INTERPOLATION_ROTATION__
-#   define __ARM_2D_HAS_INTERPOLATION_ROTATION__                    0
+#ifndef __ARM_2D_HAS_INTERPOLATION_TRANSFORM__
+#   define __ARM_2D_HAS_INTERPOLATION_TRANSFORM__                   0
 #endif
 
 // <q>Enable support for accessing individual colour channels
