@@ -858,7 +858,7 @@
       <TargetName>AC6-RunInSRAM</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>6170000::V6.17::.\Arm Compiler 6.17</pCCUsed>
+      <pCCUsed>6180000::V6.18::.\ArmCompilerforEmbedded6.18</pCCUsed>
       <uAC6>1</uAC6>
       <TargetOption>
         <TargetCommonOption>
@@ -3429,7 +3429,7 @@
         </targetInfos>
       </component>
       <component Cclass="Acceleration" Cgroup="Arm-2D" Csub="Core" Cvendor="Arm" Cversion="0.9.11-dev" condition="CMSIS-DSP">
-        <package name="Arm-2D" schemaVersion="1.4" url="https://raw.githubusercontent.com/ARM-software/EndpointAI/main-arm-2d-developing/Kernels/Research/Arm-2D/cmsis-pack/" vendor="Arm" version="1.0.0-alpha3"/>
+        <package name="Arm-2D" schemaVersion="1.4" url="https://raw.githubusercontent.com/ARM-software/EndpointAI/main-arm-2d-developing/Kernels/Research/Arm-2D/cmsis-pack/" vendor="Arm" version="1.0.0-alpha4"/>
         <targetInfos>
           <targetInfo name="AC6-DebugInSRAM"/>
           <targetInfo name="AC6-DebugInSRAM-printf"/>
@@ -3529,10 +3529,21 @@
       </component>
     </components>
     <files>
-      <file attr="config" category="preIncludeGlobal" name="Library\Include\template\arm_2d_cfg.h" version="1.0.1">
+      <file attr="config" category="sourceC" name="Library\Source\arm_2d.c" version="1.0.0">
+        <instance index="0">RTE\Acceleration\arm_2d.c</instance>
+        <component Cclass="Acceleration" Cgroup="Arm-2D" Csub="Core" Cvendor="Arm" Cversion="1.0.0-preview" condition="CMSIS-DSP"/>
+        <package name="Arm-2D" schemaVersion="1.4" url="https://raw.githubusercontent.com/ARM-software/EndpointAI/main-arm-2d-developing/Kernels/Research/Arm-2D/cmsis-pack/" vendor="Arm" version="1.0.0-preview-alpha2"/>
+        <targetInfos>
+          <targetInfo name="AC6-DebugInSRAM"/>
+          <targetInfo name="AC6-DebugInSRAM-printf"/>
+          <targetInfo name="AC6-RunInSRAM"/>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </file>
+      <file attr="config" category="preIncludeGlobal" name="Library\Include\template\arm_2d_cfg.h" version="1.0.2">
         <instance index="0">RTE\Acceleration\arm_2d_cfg.h</instance>
-        <component Cclass="Acceleration" Cgroup="Arm-2D" Csub="Core" Cvendor="Arm" Cversion="0.9.11-dev" condition="CMSIS-DSP"/>
-        <package name="Arm-2D" schemaVersion="1.4" url="https://raw.githubusercontent.com/ARM-software/EndpointAI/main-arm-2d-developing/Kernels/Research/Arm-2D/cmsis-pack/" vendor="Arm" version="1.0.0-alpha3"/>
+        <component Cclass="Acceleration" Cgroup="Arm-2D" Csub="Core" Cvendor="Arm" Cversion="1.0.0-preview" condition="CMSIS-DSP"/>
+        <package name="Arm-2D" schemaVersion="1.4" url="https://raw.githubusercontent.com/ARM-software/EndpointAI/main-arm-2d-developing/Kernels/Research/Arm-2D/cmsis-pack/" vendor="Arm" version="1.0.0-preview-alpha2"/>
         <targetInfos>
           <targetInfo name="AC6-DebugInSRAM"/>
           <targetInfo name="AC6-DebugInSRAM-printf"/>
@@ -3542,8 +3553,8 @@
       </file>
       <file attr="config" category="header" name="Config\EventRecorderConf.h" version="1.1.0">
         <instance index="0">RTE\Compiler\EventRecorderConf.h</instance>
-        <component Cbundle="ARM Compiler" Cclass="Compiler" Cgroup="Event Recorder" Cvariant="DAP" Cvendor="Keil" Cversion="1.4.0" condition="Cortex-M Device"/>
-        <package name="ARM_Compiler" schemaVersion="1.6.3" url="http://www.keil.com/pack/" vendor="Keil" version="1.6.3"/>
+        <component Cbundle="ARM Compiler" Cclass="Compiler" Cgroup="Event Recorder" Cvariant="DAP" Cvendor="Keil" Cversion="1.5.1" condition="Cortex-M Device"/>
+        <package name="ARM_Compiler" schemaVersion="1.6.3" url="https://www.keil.com/pack/" vendor="Keil" version="1.7.1"/>
         <targetInfos>
           <targetInfo name="AC6-DebugInSRAM"/>
           <targetInfo name="AC6-DebugInSRAM-printf"/>
@@ -3554,7 +3565,7 @@
       <file attr="config" category="sourceC" name="lv_cmsis_pack.c" version="1.0.0">
         <instance index="0">RTE\LVGL\lv_cmsis_pack.c</instance>
         <component Cbundle="LVGL" Cclass="LVGL" Cgroup="lvgl" Csub="Essential" Cvendor="LVGL" Cversion="8.3.0-dev"/>
-        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.2"/>
+        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.3-alpha"/>
         <targetInfos>
           <targetInfo name="AC6-DebugInSRAM"/>
           <targetInfo name="AC6-DebugInSRAM-printf"/>
@@ -3565,7 +3576,7 @@
       <file attr="config" category="preIncludeGlobal" name="lv_conf_cmsis.h" version="1.0.0">
         <instance index="0">RTE\LVGL\lv_conf_cmsis.h</instance>
         <component Cbundle="LVGL" Cclass="LVGL" Cgroup="lvgl" Csub="Essential" Cvendor="LVGL" Cversion="8.3.0-dev"/>
-        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.2"/>
+        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.3-alpha"/>
         <targetInfos>
           <targetInfo name="AC6-DebugInSRAM"/>
           <targetInfo name="AC6-DebugInSRAM-printf"/>
@@ -3576,7 +3587,7 @@
       <file attr="config" category="sourceC" name="examples\porting\lv_port_disp_template.c" version="1.0.0">
         <instance index="0">RTE\LVGL\lv_port_disp_template.c</instance>
         <component Cbundle="LVGL" Cclass="LVGL" Cgroup="lvgl" Csub="Porting" Cvendor="LVGL" Cversion="8.3.0-dev" condition="LVGL-Essential"/>
-        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.2"/>
+        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.3-alpha"/>
         <targetInfos>
           <targetInfo name="AC6-DebugInSRAM"/>
           <targetInfo name="AC6-DebugInSRAM-printf"/>
@@ -3587,7 +3598,7 @@
       <file attr="config" category="header" name="examples\porting\lv_port_disp_template.h" version="1.0.0">
         <instance index="0">RTE\LVGL\lv_port_disp_template.h</instance>
         <component Cbundle="LVGL" Cclass="LVGL" Cgroup="lvgl" Csub="Porting" Cvendor="LVGL" Cversion="8.3.0-dev" condition="LVGL-Essential"/>
-        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.2"/>
+        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.3-alpha"/>
         <targetInfos>
           <targetInfo name="AC6-DebugInSRAM"/>
           <targetInfo name="AC6-DebugInSRAM-printf"/>
@@ -3598,7 +3609,7 @@
       <file attr="config" category="sourceC" name="examples\porting\lv_port_fs_template.c" version="1.0.0">
         <instance index="0">RTE\LVGL\lv_port_fs_template.c</instance>
         <component Cbundle="LVGL" Cclass="LVGL" Cgroup="lvgl" Csub="Porting" Cvendor="LVGL" Cversion="8.3.0-dev" condition="LVGL-Essential"/>
-        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.2"/>
+        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.3-alpha"/>
         <targetInfos>
           <targetInfo name="AC6-DebugInSRAM"/>
           <targetInfo name="AC6-DebugInSRAM-printf"/>
@@ -3609,7 +3620,7 @@
       <file attr="config" category="header" name="examples\porting\lv_port_fs_template.h" version="1.0.0">
         <instance index="0">RTE\LVGL\lv_port_fs_template.h</instance>
         <component Cbundle="LVGL" Cclass="LVGL" Cgroup="lvgl" Csub="Porting" Cvendor="LVGL" Cversion="8.3.0-dev" condition="LVGL-Essential"/>
-        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.2"/>
+        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.3-alpha"/>
         <targetInfos>
           <targetInfo name="AC6-DebugInSRAM"/>
           <targetInfo name="AC6-DebugInSRAM-printf"/>
@@ -3620,7 +3631,7 @@
       <file attr="config" category="sourceC" name="examples\porting\lv_port_indev_template.c" version="1.0.0">
         <instance index="0">RTE\LVGL\lv_port_indev_template.c</instance>
         <component Cbundle="LVGL" Cclass="LVGL" Cgroup="lvgl" Csub="Porting" Cvendor="LVGL" Cversion="8.3.0-dev" condition="LVGL-Essential"/>
-        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.2"/>
+        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.3-alpha"/>
         <targetInfos>
           <targetInfo name="AC6-DebugInSRAM"/>
           <targetInfo name="AC6-DebugInSRAM-printf"/>
@@ -3631,7 +3642,7 @@
       <file attr="config" category="header" name="examples\porting\lv_port_indev_template.h" version="1.0.0">
         <instance index="0">RTE\LVGL\lv_port_indev_template.h</instance>
         <component Cbundle="LVGL" Cclass="LVGL" Cgroup="lvgl" Csub="Porting" Cvendor="LVGL" Cversion="8.3.0-dev" condition="LVGL-Essential"/>
-        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.2"/>
+        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.3-alpha"/>
         <targetInfos>
           <targetInfo name="AC6-DebugInSRAM"/>
           <targetInfo name="AC6-DebugInSRAM-printf"/>
