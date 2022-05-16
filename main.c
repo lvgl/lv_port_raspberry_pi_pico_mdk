@@ -126,6 +126,13 @@ static void system_init(void)
     }
 }
 
+#if LV_USE_DEMO_BENCHMARK
+static void on_benchmark_finished(void)
+{
+    disp_enable();
+}
+#endif
+
 int main(void)
 {
     system_init();
@@ -139,6 +146,9 @@ int main(void)
 /* We have no sufficient SRAM to run those demos in all-in-ram mode*/
 #if !defined(PICO_NO_FLASH)
 #   if LV_USE_DEMO_BENCHMARK
+    disp_disable();
+    
+    lv_demo_benchmark_set_finished_cb(&on_benchmark_finished);
     lv_demo_benchmark();
 #   endif
     
