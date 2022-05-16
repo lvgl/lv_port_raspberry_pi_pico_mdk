@@ -3482,7 +3482,7 @@
           <targetInfo name="AC6-flash"/>
         </targetInfos>
       </component>
-      <component Cbundle="LVGL" Cclass="LVGL" Cgroup="lvgl" Csub="Benchmark" Cvendor="LVGL" Cversion="8.3.0-dev" condition="LVGL-Essential">
+      <component Cbundle="LVGL" Cclass="LVGL" Cgroup="lvgl" Csub="Demo:Widgets" Cvendor="LVGL" Cversion="8.3.0-dev" condition="LVGL-Essential">
         <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.4-alpha5"/>
         <targetInfos>
           <targetInfo name="AC6-DebugInSRAM"/>
