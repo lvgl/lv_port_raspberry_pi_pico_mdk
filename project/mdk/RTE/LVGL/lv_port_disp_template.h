@@ -31,6 +31,9 @@ extern "C" {
  **********************/
 void lv_port_disp_init(void);
 
+extern void disp_enable(void);
+extern void disp_disable(void);
+
 /**********************
  *      MACROS
  **********************/

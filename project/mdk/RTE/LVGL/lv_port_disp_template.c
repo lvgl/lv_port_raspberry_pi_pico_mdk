@@ -159,19 +159,31 @@ void __arm_2d_helper_swap_rgb16(uint16_t *phwBuffer, uint32_t wSize)
     
 }
 
+static volatile bool is_flush_enabled = true;
+
+void disp_enable(void)
+{
+    is_flush_enabled = true;
+}
+
+void disp_disable(void)
+{
+    is_flush_enabled = false;
+}
+
 /*Flush the content of the internal buffer the specific area on the display
  *You can use DMA or any hardware acceleration to do this operation in the background but
  *'lv_disp_flush_ready()' has to be called when finished.*/
 static void disp_flush(lv_disp_drv_t * disp_drv, const lv_area_t * area, lv_color_t * color_p)
 {
     //__arm_2d_helper_swap_rgb16((uint16_t *)color_p, GLCD_WIDTH * GLCD_HEIGHT);
-    
-    GLCD_DrawBitmap(area->x1,               //!< x
-                    area->y1,               //!< y
-                    area->x2 - area->x1 + 1,    //!< width
-                    area->y2 - area->y1 + 1,    //!< height
-                    (const uint8_t *)color_p);
-
+    if (is_flush_enabled) {
+        GLCD_DrawBitmap(area->x1,                   //!< x
+                        area->y1,                   //!< y
+                        area->x2 - area->x1 + 1,    //!< width
+                        area->y2 - area->y1 + 1,    //!< height
+                        (const uint8_t *)color_p);
+    }
     /*IMPORTANT!!!
      *Inform the graphics library that you are ready with the flushing*/
     lv_disp_flush_ready(disp_drv);
