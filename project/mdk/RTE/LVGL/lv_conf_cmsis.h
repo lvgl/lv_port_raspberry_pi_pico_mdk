@@ -1,6 +1,6 @@
 /**
  * @file lv_conf.h
- * Configuration file for v8.3.0-dev
+ * Configuration file for v8.3.0
  */
 
 /* clang-format off */
@@ -29,7 +29,7 @@
 
 /* Adjust color mix functions rounding. GPUs might calculate color mix (blending) differently.
  * 0: round down, 64: round up from x.75, 128: round up from half, 192: round up from x.25, 254: round up */
-#define LV_COLOR_MIX_ROUND_OFS (LV_COLOR_DEPTH == 32 ? 0: 128)
+#define LV_COLOR_MIX_ROUND_OFS 0
 
 /*Images pixels with this color will not be drawn if they are chroma keyed)*/
 #define LV_COLOR_CHROMA_KEY lv_color_hex(0x00ff00)         /*pure green*/
@@ -42,7 +42,7 @@
 #define LV_MEM_CUSTOM 0
 #if LV_MEM_CUSTOM == 0
     /*Size of the memory available for `lv_mem_alloc()` in bytes (>= 2kB)*/
-    #define LV_MEM_SIZE (48U * 1024U)          /*[bytes]*/
+    #define LV_MEM_SIZE (64U * 1024U)          /*[bytes]*/
 
     /*Set an address for the memory pool instead of allocating it as a normal array. Can be in external SRAM too.*/
     #define LV_MEM_ADR 0     /*0: unused*/
@@ -132,8 +132,6 @@
  * and blend it as an image with the given opacity.
  * Note that `bg_opa`, `text_opa` etc don't require buffering into layer)
  * The widget can be buffered in smaller chunks to avoid using large buffers.
- * `draw_area` (`lv_area_t` meaning the area to draw and `px_size` (size of a pixel in bytes)
- * can be used the set the buffer size adaptively.
  *
  * - LV_LAYER_SIMPLE_BUF_SIZE: [bytes] the optimal target buffer size. LVGL will try to allocate it
  * - LV_LAYER_SIMPLE_FALLBACK_BUF_SIZE: [bytes]  used if `LV_LAYER_SIMPLE_BUF_SIZE` couldn't be allocated.
@@ -143,7 +141,7 @@
  * and can't be drawn in chunks. So these settings affects only widgets with opacity.
  */
 #define LV_LAYER_SIMPLE_BUF_SIZE          (24 * 1024)
-#define LV_LAYER_SIMPLE_FALLBACK_BUF_SIZE LV_MAX(lv_area_get_width(&draw_area) * px_size, 2048)
+#define LV_LAYER_SIMPLE_FALLBACK_BUF_SIZE (3 * 1024)
 
 /*Default image cache size. Image caching keeps the images opened.
  *If only the built-in image formats are used there is no real advantage of caching. (I.e. if no new image decoder is added)
@@ -405,6 +403,9 @@
     #define LV_FONT_SUBPX_BGR 0  /*0: RGB; 1:BGR order*/
 #endif
 
+/*Enable drawing placeholders when glyph dsc is not found*/
+#define LV_USE_FONT_PLACEHOLDER 1
+
 /*=================
  *  TEXT SETTINGS
  *=================*/
@@ -615,6 +616,23 @@
 
 /*1: Enable a published subscriber based messaging system */
 #define LV_USE_MSG 0
+
+/*1: Enable Pinyin input method*/
+/*Requires: lv_keyboard*/
+#if LV_USE_IME_PINYIN
+    /*1: Use default thesaurus*/
+    /*If you do not use the default thesaurus, be sure to use `lv_ime_pinyin` after setting the thesauruss*/
+    #define LV_IME_PINYIN_USE_DEFAULT_DICT 1
+    /*Set the maximum number of candidate panels that can be displayed*/
+    /*This needs to be adjusted according to the size of the screen*/
+    #define LV_IME_PINYIN_CAND_TEXT_NUM 6
+
+    /*Use 9 key input(k9)*/
+    #define LV_IME_PINYIN_USE_K9_MODE      1
+    #if LV_IME_PINYIN_USE_K9_MODE == 1
+        #define LV_IME_PINYIN_K9_CAND_TEXT_NUM 3
+    #endif // LV_IME_PINYIN_USE_K9_MODE
+#endif
 
 /*==================
 * EXAMPLES

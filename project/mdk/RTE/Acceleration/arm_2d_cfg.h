@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2009-2020 Arm Limited. All rights reserved.
+ * Copyright (c) 2009-2022 Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -47,7 +47,7 @@ extern "C" {
 // <i> Note that enabling this feature suffers a non-negligible performance drop.
 // <i> This feature is disabled by default.
 #ifndef __ARM_2D_HAS_ANTI_ALIAS_TRANSFORM__
-#   define __ARM_2D_HAS_ANTI_ALIAS_TRANSFORM__                      0
+#   define __ARM_2D_HAS_ANTI_ALIAS_TRANSFORM__                      1
 #endif
 
 // <q>Enable support for accessing individual colour channels
@@ -62,7 +62,7 @@ extern "C" {
 // =======================
 // 
 // <c1> Do NOT treat alpha value 255 as completely opaque in mask related operations
-// <i> When define this macro, alpha value 0xFF will not be treated as opaque in mask related operations and you can barely see the background. Defining this macro improves performance. Althought this is marked as UNSAFE, we highly recommend users to define this macro by default.
+// <i> When define this macro, alpha value 0xFF will not be treated as opaque in mask related operations and you can barely see the background. Defining this macro improves performance.
 //#define __ARM_2D_CFG_UNSAFE_IGNORE_ALPHA_255_COMPENSATION__  
 // </c>
 
@@ -75,6 +75,60 @@ extern "C" {
 // <i> This option is used to remove calibration in angle computations to gain a better performance, small error might be noticible for angles like 90, 180, 270 etc.
 //#define __ARM_2D_CFG_UNSAFE_NO_SATURATION_IN_FIXED_POINT__ 
 // </c>
+// </h>
+
+
+// <h>Extra Components
+// =======================
+// 
+// <o __GLCD_CFG_COLOUR_DEPTH__> Select the screen colour depth
+//     <8=>     8 Bits
+//     <16=>    16Bits
+//     <32=>    32Bits
+// <i> The colour depth of your LCD
+#define __GLCD_CFG_COLOUR_DEPTH__               16
+
+// <o>Width of the screen <8-32767>
+// <i> The width of your screen
+// <i> Default: 320
+#ifndef __GLCD_CFG_SCEEN_WIDTH__
+#   define __GLCD_CFG_SCEEN_WIDTH__             240
+#endif
+
+// <o>Height of the screen <8-32767>
+// <i> The height of your screen
+// <i> Default: 240
+#ifndef __GLCD_CFG_SCEEN_HEIGHT__
+#   define __GLCD_CFG_SCEEN_HEIGHT__            240
+#endif
+
+// <o> The size of the LCD printf text buffer <16-65535>
+// <i> The text buffer size for the lcd printf service. It determins how many character you can use in one printf string.
+#ifndef __LCD_PRINTF_CFG_TEXT_BUFFER_SIZE__
+#   define __LCD_PRINTF_CFG_TEXT_BUFFER_SIZE__  64
+#endif
+
+// <h>Benchmark
+// <o>Width of the PFB block
+// <i> The width of your PFB block size used in arm-2d benchmark
+#ifndef BENCHMARK_PFB_BLOCK_WIDTH
+#   define BENCHMARK_PFB_BLOCK_WIDTH            240
+#endif
+
+// <o>Height of the PFB block
+// <i> The height of your PFB block size used in arm-2d benchmark
+#ifndef BENCHMARK_PFB_BLOCK_HEIGHT
+#   define BENCHMARK_PFB_BLOCK_HEIGHT           240
+#endif
+
+// <o>Number of iterations <1-2000>
+// <i> run number of iterations used in arm-2d benchmark before calculate the result.
+#ifndef ITERATION_CNT
+#   define ITERATION_CNT                        1000
+#endif
+//</h>
+// </h>
+
 
 
 

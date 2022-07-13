@@ -3,12 +3,14 @@
  *
  */
 
- /*Copy this file as "lv_port_disp.c" and set this value to "1" to enable content*/
+/*Copy this file as "lv_port_disp.c" and set this value to "1" to enable content*/
 #if 1
 
 /*********************
  *      INCLUDES
  *********************/
+#include <stdbool.h>
+
 #include "lv_port_disp_template.h"
 #include "lvgl.h"
 #include "GLCD_Config.h"
@@ -17,6 +19,7 @@
 #if defined(__RTE_ACCELERATION_ARM_2D__)
 #   include "arm_2d.h"
 #endif
+
 
 /*********************
  *      DEFINES
@@ -84,6 +87,19 @@ void lv_port_disp_init(void)
     static lv_color_t buf_1[GLCD_WIDTH * 10];                          /*A buffer for 10 rows*/
     lv_disp_draw_buf_init(&draw_buf_dsc_1, buf_1, NULL, dimof(buf_1));   /*Initialize the display buffer*/
 
+//    /* Example for 2) */
+//    static lv_disp_draw_buf_t draw_buf_dsc_2;
+//    static lv_color_t buf_2_1[MY_DISP_HOR_RES * 10];                        /*A buffer for 10 rows*/
+//    static lv_color_t buf_2_2[MY_DISP_HOR_RES * 10];                        /*An other buffer for 10 rows*/
+//    lv_disp_draw_buf_init(&draw_buf_dsc_2, buf_2_1, buf_2_2, MY_DISP_HOR_RES * 10);   /*Initialize the display buffer*/
+
+//    /* Example for 3) also set disp_drv.full_refresh = 1 below*/
+//    static lv_disp_draw_buf_t draw_buf_dsc_3;
+//    static lv_color_t buf_3_1[MY_DISP_HOR_RES * MY_DISP_VER_RES];            /*A screen sized buffer*/
+//    static lv_color_t buf_3_2[MY_DISP_HOR_RES * MY_DISP_VER_RES];            /*Another screen sized buffer*/
+//    lv_disp_draw_buf_init(&draw_buf_dsc_3, buf_3_1, buf_3_2,
+//                          MY_DISP_VER_RES * LV_VER_RES_MAX);   /*Initialize the display buffer*/
+
     /*-----------------------------------
      * Register the display in LVGL
      *----------------------------------*/
@@ -104,7 +120,7 @@ void lv_port_disp_init(void)
     disp_drv.draw_buf = &draw_buf_dsc_1;
 
     /*Required for Example 3)*/
-    //disp_drv.full_refresh = 1
+    //disp_drv.full_refresh = 1;
 
     /* Fill a memory array with a color if you have GPU.
      * Note that, in lv_conf.h you can enable GPUs that has built-in support in LVGL.
@@ -122,68 +138,42 @@ void lv_port_disp_init(void)
 /*Initialize your display and the required peripherals.*/
 static void disp_init(void)
 {
-#if defined(__RTE_ACCELERATION_ARM_2D__)
-    arm_2d_init();
-#endif
+    /*You code here*/
+}
+
+volatile bool disp_flush_enabled = true;
+
+/* Enable updating the screen (the flushing process) when disp_flush() is called by LVGL
+ */
+void disp_enable_update(void)
+{
+    disp_flush_enabled = true;
+}
+
+/* Disable updating the screen (the flushing process) when disp_flush() is called by LVGL
+ */
+void disp_disable_update(void)
+{
+    disp_flush_enabled = false;
 }
 
 extern 
-int32_t  GLCD_DrawBitmap          (uint32_t x, uint32_t y, uint32_t width, uint32_t height, const uint8_t *bitmap);
-
-static 
-void __arm_2d_helper_swap_rgb16(uint16_t *phwBuffer, uint32_t wSize)
-{
-    if (0 == wSize) {
-        return ;
-    }
-    
-    //! aligned (4)
-    assert((((uintptr_t) phwBuffer) & 0x03) == 0);
-    
-    uint32_t wWords = wSize >> 1;
-    uint32_t *pwBuffer = (uint32_t *)phwBuffer;
-    wSize &= 0x01;
-    
-    if (wWords > 0) {
-        do {
-            uint32_t wTemp = *pwBuffer;
-            *pwBuffer++ = __REV16(wTemp);
-        } while(--wWords);
-    }
-    
-    if (wSize) {
-        uint32_t wTemp = *pwBuffer;
-        (*(uint16_t *)pwBuffer) = (uint16_t)__REV16(wTemp);
-    }
-    
-    
-}
-
-static volatile bool is_flush_enabled = true;
-
-void disp_enable(void)
-{
-    is_flush_enabled = true;
-}
-
-void disp_disable(void)
-{
-    is_flush_enabled = false;
-}
+int32_t  GLCD_DrawBitmap (uint32_t x, uint32_t y, uint32_t width, uint32_t height, const uint8_t *bitmap);
 
 /*Flush the content of the internal buffer the specific area on the display
  *You can use DMA or any hardware acceleration to do this operation in the background but
  *'lv_disp_flush_ready()' has to be called when finished.*/
 static void disp_flush(lv_disp_drv_t * disp_drv, const lv_area_t * area, lv_color_t * color_p)
 {
-    //__arm_2d_helper_swap_rgb16((uint16_t *)color_p, GLCD_WIDTH * GLCD_HEIGHT);
-    if (is_flush_enabled) {
+    if(disp_flush_enabled) {
+        /*The most simple case (but also the slowest) to put all pixels to the screen one-by-one*/
         GLCD_DrawBitmap(area->x1,                   //!< x
-                        area->y1,                   //!< y
-                        area->x2 - area->x1 + 1,    //!< width
-                        area->y2 - area->y1 + 1,    //!< height
-                        (const uint8_t *)color_p);
+                area->y1,                   //!< y
+                area->x2 - area->x1 + 1,    //!< width
+                area->y2 - area->y1 + 1,    //!< height
+                (const uint8_t *)color_p);
     }
+
     /*IMPORTANT!!!
      *Inform the graphics library that you are ready with the flushing*/
     lv_disp_flush_ready(disp_drv);
