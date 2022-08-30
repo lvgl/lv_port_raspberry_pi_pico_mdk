@@ -1646,25 +1646,25 @@
           <targetInfo name="AC6-flash"/>
         </targetInfos>
       </file>
-      <file attr="config" category="sourceC" condition="NO_LVGL_Pack" name="pikascript-lib\pika_lvgl\pika_lv_point_t.c">
+      <file attr="config" category="sourceC" condition="NO_LVGL_Pack" name="pikascript-lib\pika_lvgl\pika_lv_point_t.c" version="0.2.0">
         <instance index="0" removed="1">RTE\PikaScript\pika_lv_point_t.c</instance>
         <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="pika_lvgl" Cvendor="PikaTech" Cversion="0.2.0" condition="Kernel"/>
         <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
         <targetInfos/>
       </file>
-      <file attr="config" category="sourceC" condition="NO_LVGL_Pack" name="pikascript-lib\pika_lvgl\pika_lv_timer_t.c">
+      <file attr="config" category="sourceC" condition="NO_LVGL_Pack" name="pikascript-lib\pika_lvgl\pika_lv_timer_t.c" version="0.2.0">
         <instance index="0" removed="1">RTE\PikaScript\pika_lv_timer_t.c</instance>
         <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="pika_lvgl" Cvendor="PikaTech" Cversion="0.2.0" condition="Kernel"/>
         <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
         <targetInfos/>
       </file>
-      <file attr="config" category="sourceC" condition="NO_LVGL_Pack" name="pikascript-lib\pika_lvgl\pika_lv_wegit.c">
+      <file attr="config" category="sourceC" condition="NO_LVGL_Pack" name="pikascript-lib\pika_lvgl\pika_lv_wegit.c" version="0.2.0">
         <instance index="0" removed="1">RTE\PikaScript\pika_lv_wegit.c</instance>
         <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="pika_lvgl" Cvendor="PikaTech" Cversion="0.2.0" condition="Kernel"/>
         <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
         <targetInfos/>
       </file>
-      <file attr="config" category="sourceC" condition="NO_LVGL_Pack" name="pikascript-lib\pika_lvgl\pika_lvgl.c">
+      <file attr="config" category="sourceC" condition="NO_LVGL_Pack" name="pikascript-lib\pika_lvgl\pika_lvgl.c" version="0.2.0">
         <instance index="0" removed="1">RTE\PikaScript\pika_lvgl.c</instance>
         <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="pika_lvgl" Cvendor="PikaTech" Cversion="0.2.0" condition="Kernel"/>
         <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
@@ -1766,7 +1766,7 @@
           <targetInfo name="AC6-flash"/>
         </targetInfos>
       </file>
-      <file attr="config" category="sourceC" condition="NO_LVGL_Pack" name="pikascript-lib\pika_lvgl\pika_lvgl_indev_t.c">
+      <file attr="config" category="sourceC" condition="NO_LVGL_Pack" name="pikascript-lib\pika_lvgl\pika_lvgl_indev_t.c" version="0.2.0">
         <instance index="0" removed="1">RTE\PikaScript\pika_lvgl_indev_t.c</instance>
         <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="pika_lvgl" Cvendor="PikaTech" Cversion="0.2.0" condition="Kernel"/>
         <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
@@ -1796,7 +1796,7 @@
           <targetInfo name="AC6-flash"/>
         </targetInfos>
       </file>
-      <file attr="config" category="sourceC" condition="NO_LVGL_Pack" name="pikascript-lib\pika_lvgl\pika_lvgl_lv_event.c">
+      <file attr="config" category="sourceC" condition="NO_LVGL_Pack" name="pikascript-lib\pika_lvgl\pika_lvgl_lv_event.c" version="0.2.0">
         <instance index="0" removed="1">RTE\PikaScript\pika_lvgl_lv_event.c</instance>
         <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="pika_lvgl" Cvendor="PikaTech" Cversion="0.2.0" condition="Kernel"/>
         <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
@@ -1810,7 +1810,7 @@
           <targetInfo name="AC6-flash"/>
         </targetInfos>
       </file>
-      <file attr="config" category="sourceC" condition="NO_LVGL_Pack" name="pikascript-lib\pika_lvgl\pika_lvgl_lv_obj.c">
+      <file attr="config" category="sourceC" condition="NO_LVGL_Pack" name="pikascript-lib\pika_lvgl\pika_lvgl_lv_obj.c" version="0.2.0">
         <instance index="0" removed="1">RTE\PikaScript\pika_lvgl_lv_obj.c</instance>
         <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="pika_lvgl" Cvendor="PikaTech" Cversion="0.2.0" condition="Kernel"/>
         <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
@@ -1824,7 +1824,7 @@
           <targetInfo name="AC6-flash"/>
         </targetInfos>
       </file>
-      <file attr="config" category="sourceC" condition="NO_LVGL_Pack" name="pikascript-lib\pika_lvgl\pika_lvgl_lv_style_t.c">
+      <file attr="config" category="sourceC" condition="NO_LVGL_Pack" name="pikascript-lib\pika_lvgl\pika_lvgl_lv_style_t.c" version="0.2.0">
         <instance index="0" removed="1">RTE\PikaScript\pika_lvgl_lv_style_t.c</instance>
         <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="pika_lvgl" Cvendor="PikaTech" Cversion="0.2.0" condition="Kernel"/>
         <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>

@@ -1,7 +1,12 @@
+import pika_lvgl as lv
 import PikaStdLib
-
-print('hello PikaScript!')
-
 mem = PikaStdLib.MemChecker()
-print('mem used max:')
-mem.max()
+
+# Create an Arc
+arc = lv.arc(lv.scr_act())
+arc.set_end_angle(200)
+arc.set_size(150, 150)
+arc.center()
+
+print('mem used max: %0.2f kB' % (mem.getMax()))
+print('mem used now: %0.2f kB' % (mem.getNow()))
