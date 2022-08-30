@@ -35,6 +35,10 @@
 #   include <EventRecorder.h>
 #endif
 
+#if defined(RTE_Script_PikaScript)
+#   include "pikascript.h"
+#endif
+
 
 /*============================ MACROS ========================================*/
 #define TOP         (0x1FFF)
@@ -142,6 +146,10 @@ int main(void)
     lv_init();
     lv_port_disp_init();
     lv_port_indev_init();
+
+#if defined(RTE_Script_PikaScript)
+    pikaScriptInit();
+#endif
 
 /* We have no sufficient SRAM to run those demos in all-in-ram mode*/
 #if !defined(PICO_NO_FLASH)

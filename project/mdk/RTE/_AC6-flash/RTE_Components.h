@@ -28,15 +28,17 @@
 /* Keil.ARM Compiler::Compiler:I/O:STDOUT:EVR:1.2.0 */
 #define RTE_Compiler_IO_STDOUT          /* Compiler I/O: STDOUT */
           #define RTE_Compiler_IO_STDOUT_EVR      /* Compiler I/O: STDOUT EVR */
-/* LVGL.LVGL::LVGL:lvgl:Benchmark:9.0.0-dev */
-/*! \brief enable demo:bencharmk */
-#define LV_USE_DEMO_BENCHMARK         1
 /* LVGL.LVGL::LVGL:lvgl:Essential:9.0.0-dev */
 /*! \brief Enable LVGL */
 #define RTE_GRAPHICS_LVGL
 /* LVGL.LVGL::LVGL:lvgl:Extra Themes:9.0.0-dev */
 /*! \brief use extra themes, widgets and layouts */
 #define RTE_GRAPHICS_LVGL_USE_EXTRA_THEMES
+/* PikaTech.PikaScript::PikaScript:PikaScript:Core:1.10.6 */
+#define RTE_Script_PikaScript
+/* PikaTech.PikaScript::PikaScript:PikaScript:pika_lvgl:0.2.0 */
+/*! \brief enable PikaScrit Binding */
+#define PIKA_USE_LVGL_BINDING          1
 
 
 #endif /* RTE_COMPONENTS_H */
