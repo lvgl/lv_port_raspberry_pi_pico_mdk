@@ -63,3 +63,9 @@ project/mdk/JLinkLog.txt
 project/mdk/template.uf2
 *._ac
 *.__i
+project/mdk/RTE/PikaScript/*.c
+project/mdk/RTE/PikaScript/*.h
+project/mdk/RTE/PikaScript/pikascript-lib
+project/mdk/RTE/PikaScript/pikascript-core
+project/mdk/RTE/PikaScript/.*
+project/mdk/RTE/LVGL/.*

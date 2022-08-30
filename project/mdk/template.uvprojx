@@ -58,7 +58,7 @@
           <ListingPath>.\Listings\</ListingPath>
           <HexFormatSelection>1</HexFormatSelection>
           <Merge32K>0</Merge32K>
-          <CreateBatchFile>1</CreateBatchFile>
+          <CreateBatchFile>0</CreateBatchFile>
           <BeforeCompile>
             <RunUserProg1>0</RunUserProg1>
             <RunUserProg2>0</RunUserProg2>
@@ -72,7 +72,7 @@
           <BeforeMake>
             <RunUserProg1>1</RunUserProg1>
             <RunUserProg2>0</RunUserProg2>
-            <UserProg1Name>E:\git\lv_port_raspberry_pi_pico_mdk\project\mdk\RTE\PikaScript\pikaBeforBuild-keil.bat</UserProg1Name>
+            <UserProg1Name>RTE\PikaScript\pikaBeforBuild-keil.bat</UserProg1Name>
             <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
@@ -891,19 +891,25 @@
         </targetInfos>
       </component>
       <component Cbundle="LVGL" Cclass="LVGL" Cgroup="lvgl" Csub="Essential" Cvendor="LVGL" Cversion="9.0.0-dev">
-        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.8-alpha1"/>
+        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.8"/>
         <targetInfos>
           <targetInfo name="AC6-flash"/>
         </targetInfos>
       </component>
       <component Cbundle="LVGL" Cclass="LVGL" Cgroup="lvgl" Csub="Extra Themes" Cvendor="LVGL" Cversion="9.0.0-dev" condition="LVGL-Essential">
-        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.8-alpha1"/>
+        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.8"/>
+        <targetInfos>
+          <targetInfo name="AC6-flash"/>
+        </targetInfos>
+      </component>
+      <component Cbundle="LVGL" Cclass="LVGL" Cgroup="lvgl" Csub="PikaScript Binding" Cvendor="LVGL" Cversion="0.2.0" condition="LVGL-Essential">
+        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.8"/>
         <targetInfos>
           <targetInfo name="AC6-flash"/>
         </targetInfos>
       </component>
       <component Cbundle="LVGL" Cclass="LVGL" Cgroup="lvgl" Csub="Porting" Cvendor="LVGL" Cversion="9.0.0-dev" condition="LVGL-Essential">
-        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.8-alpha1"/>
+        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.8"/>
         <targetInfos>
           <targetInfo name="AC6-flash"/>
         </targetInfos>
@@ -939,7 +945,7 @@
       <file attr="config" category="sourceC" name="lv_cmsis_pack.c" version="1.0.0">
         <instance index="0">RTE\LVGL\lv_cmsis_pack.c</instance>
         <component Cbundle="LVGL" Cclass="LVGL" Cgroup="lvgl" Csub="Essential" Cvendor="LVGL" Cversion="9.0.0-dev"/>
-        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.8-alpha1"/>
+        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.8"/>
         <targetInfos>
           <targetInfo name="AC6-flash"/>
         </targetInfos>
@@ -947,7 +953,7 @@
       <file attr="config" category="preIncludeGlobal" name="lv_conf_cmsis.h" version="1.1.0">
         <instance index="0">RTE\LVGL\lv_conf_cmsis.h</instance>
         <component Cbundle="LVGL" Cclass="LVGL" Cgroup="lvgl" Csub="Essential" Cvendor="LVGL" Cversion="9.0.0-dev"/>
-        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.8-alpha1"/>
+        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.8"/>
         <targetInfos>
           <targetInfo name="AC6-flash"/>
         </targetInfos>
@@ -955,7 +961,7 @@
       <file attr="config" category="sourceC" name="examples\porting\lv_port_disp_template.c" version="1.0.1">
         <instance index="0">RTE\LVGL\lv_port_disp_template.c</instance>
         <component Cbundle="LVGL" Cclass="LVGL" Cgroup="lvgl" Csub="Porting" Cvendor="LVGL" Cversion="9.0.0-dev" condition="LVGL-Essential"/>
-        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.8-alpha1"/>
+        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.8"/>
         <targetInfos>
           <targetInfo name="AC6-flash"/>
         </targetInfos>
@@ -963,7 +969,7 @@
       <file attr="config" category="header" name="examples\porting\lv_port_disp_template.h" version="1.0.1">
         <instance index="0">RTE\LVGL\lv_port_disp_template.h</instance>
         <component Cbundle="LVGL" Cclass="LVGL" Cgroup="lvgl" Csub="Porting" Cvendor="LVGL" Cversion="9.0.0-dev" condition="LVGL-Essential"/>
-        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.8-alpha1"/>
+        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.8"/>
         <targetInfos>
           <targetInfo name="AC6-flash"/>
         </targetInfos>
@@ -971,7 +977,7 @@
       <file attr="config" category="sourceC" name="examples\porting\lv_port_fs_template.c" version="1.0.0">
         <instance index="0">RTE\LVGL\lv_port_fs_template.c</instance>
         <component Cbundle="LVGL" Cclass="LVGL" Cgroup="lvgl" Csub="Porting" Cvendor="LVGL" Cversion="9.0.0-dev" condition="LVGL-Essential"/>
-        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.8-alpha1"/>
+        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.8"/>
         <targetInfos>
           <targetInfo name="AC6-flash"/>
         </targetInfos>
@@ -979,7 +985,7 @@
       <file attr="config" category="header" name="examples\porting\lv_port_fs_template.h" version="1.0.0">
         <instance index="0">RTE\LVGL\lv_port_fs_template.h</instance>
         <component Cbundle="LVGL" Cclass="LVGL" Cgroup="lvgl" Csub="Porting" Cvendor="LVGL" Cversion="9.0.0-dev" condition="LVGL-Essential"/>
-        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.8-alpha1"/>
+        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.8"/>
         <targetInfos>
           <targetInfo name="AC6-flash"/>
         </targetInfos>
@@ -987,7 +993,7 @@
       <file attr="config" category="sourceC" name="examples\porting\lv_port_indev_template.c" version="1.0.0">
         <instance index="0">RTE\LVGL\lv_port_indev_template.c</instance>
         <component Cbundle="LVGL" Cclass="LVGL" Cgroup="lvgl" Csub="Porting" Cvendor="LVGL" Cversion="9.0.0-dev" condition="LVGL-Essential"/>
-        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.8-alpha1"/>
+        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.8"/>
         <targetInfos>
           <targetInfo name="AC6-flash"/>
         </targetInfos>
@@ -995,7 +1001,7 @@
       <file attr="config" category="header" name="examples\porting\lv_port_indev_template.h" version="1.0.0">
         <instance index="0">RTE\LVGL\lv_port_indev_template.h</instance>
         <component Cbundle="LVGL" Cclass="LVGL" Cgroup="lvgl" Csub="Porting" Cvendor="LVGL" Cversion="9.0.0-dev" condition="LVGL-Essential"/>
-        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.8-alpha1"/>
+        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.8"/>
         <targetInfos>
           <targetInfo name="AC6-flash"/>
         </targetInfos>
@@ -1640,37 +1646,29 @@
           <targetInfo name="AC6-flash"/>
         </targetInfos>
       </file>
-      <file attr="config" category="sourceC" condition="NO_LVGL_Pack" name="pikascript-lib\pika_lvgl\pika_lv_point_t.c" version="0.2.0">
-        <instance index="0">RTE\PikaScript\pika_lv_point_t.c</instance>
+      <file attr="config" category="sourceC" condition="NO_LVGL_Pack" name="pikascript-lib\pika_lvgl\pika_lv_point_t.c">
+        <instance index="0" removed="1">RTE\PikaScript\pika_lv_point_t.c</instance>
         <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="pika_lvgl" Cvendor="PikaTech" Cversion="0.2.0" condition="Kernel"/>
         <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+        <targetInfos/>
       </file>
-      <file attr="config" category="sourceC" condition="NO_LVGL_Pack" name="pikascript-lib\pika_lvgl\pika_lv_timer_t.c" version="0.2.0">
-        <instance index="0">RTE\PikaScript\pika_lv_timer_t.c</instance>
+      <file attr="config" category="sourceC" condition="NO_LVGL_Pack" name="pikascript-lib\pika_lvgl\pika_lv_timer_t.c">
+        <instance index="0" removed="1">RTE\PikaScript\pika_lv_timer_t.c</instance>
         <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="pika_lvgl" Cvendor="PikaTech" Cversion="0.2.0" condition="Kernel"/>
         <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+        <targetInfos/>
       </file>
-      <file attr="config" category="sourceC" condition="NO_LVGL_Pack" name="pikascript-lib\pika_lvgl\pika_lv_wegit.c" version="0.2.0">
-        <instance index="0">RTE\PikaScript\pika_lv_wegit.c</instance>
+      <file attr="config" category="sourceC" condition="NO_LVGL_Pack" name="pikascript-lib\pika_lvgl\pika_lv_wegit.c">
+        <instance index="0" removed="1">RTE\PikaScript\pika_lv_wegit.c</instance>
         <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="pika_lvgl" Cvendor="PikaTech" Cversion="0.2.0" condition="Kernel"/>
         <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+        <targetInfos/>
       </file>
-      <file attr="config" category="sourceC" condition="NO_LVGL_Pack" name="pikascript-lib\pika_lvgl\pika_lvgl.c" version="0.2.0">
-        <instance index="0">RTE\PikaScript\pika_lvgl.c</instance>
+      <file attr="config" category="sourceC" condition="NO_LVGL_Pack" name="pikascript-lib\pika_lvgl\pika_lvgl.c">
+        <instance index="0" removed="1">RTE\PikaScript\pika_lvgl.c</instance>
         <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="pika_lvgl" Cvendor="PikaTech" Cversion="0.2.0" condition="Kernel"/>
         <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+        <targetInfos/>
       </file>
       <file attr="config" category="header" name="pikascript-api\pika_lvgl.h" version="1.10.6">
         <instance index="0">RTE\PikaScript\pika_lvgl.h</instance>
@@ -1768,13 +1766,11 @@
           <targetInfo name="AC6-flash"/>
         </targetInfos>
       </file>
-      <file attr="config" category="sourceC" condition="NO_LVGL_Pack" name="pikascript-lib\pika_lvgl\pika_lvgl_indev_t.c" version="0.2.0">
-        <instance index="0">RTE\PikaScript\pika_lvgl_indev_t.c</instance>
+      <file attr="config" category="sourceC" condition="NO_LVGL_Pack" name="pikascript-lib\pika_lvgl\pika_lvgl_indev_t.c">
+        <instance index="0" removed="1">RTE\PikaScript\pika_lvgl_indev_t.c</instance>
         <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="pika_lvgl" Cvendor="PikaTech" Cversion="0.2.0" condition="Kernel"/>
         <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+        <targetInfos/>
       </file>
       <file attr="config" category="header" name="pikascript-api\pika_lvgl_indev_t.h" version="1.10.6">
         <instance index="0">RTE\PikaScript\pika_lvgl_indev_t.h</instance>
@@ -1800,13 +1796,11 @@
           <targetInfo name="AC6-flash"/>
         </targetInfos>
       </file>
-      <file attr="config" category="sourceC" condition="NO_LVGL_Pack" name="pikascript-lib\pika_lvgl\pika_lvgl_lv_event.c" version="0.2.0">
-        <instance index="0">RTE\PikaScript\pika_lvgl_lv_event.c</instance>
+      <file attr="config" category="sourceC" condition="NO_LVGL_Pack" name="pikascript-lib\pika_lvgl\pika_lvgl_lv_event.c">
+        <instance index="0" removed="1">RTE\PikaScript\pika_lvgl_lv_event.c</instance>
         <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="pika_lvgl" Cvendor="PikaTech" Cversion="0.2.0" condition="Kernel"/>
         <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+        <targetInfos/>
       </file>
       <file attr="config" category="header" name="pikascript-api\pika_lvgl_lv_event.h" version="1.10.6">
         <instance index="0">RTE\PikaScript\pika_lvgl_lv_event.h</instance>
@@ -1816,13 +1810,11 @@
           <targetInfo name="AC6-flash"/>
         </targetInfos>
       </file>
-      <file attr="config" category="sourceC" condition="NO_LVGL_Pack" name="pikascript-lib\pika_lvgl\pika_lvgl_lv_obj.c" version="0.2.0">
-        <instance index="0">RTE\PikaScript\pika_lvgl_lv_obj.c</instance>
+      <file attr="config" category="sourceC" condition="NO_LVGL_Pack" name="pikascript-lib\pika_lvgl\pika_lvgl_lv_obj.c">
+        <instance index="0" removed="1">RTE\PikaScript\pika_lvgl_lv_obj.c</instance>
         <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="pika_lvgl" Cvendor="PikaTech" Cversion="0.2.0" condition="Kernel"/>
         <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+        <targetInfos/>
       </file>
       <file attr="config" category="header" name="pikascript-api\pika_lvgl_lv_obj.h" version="1.10.6">
         <instance index="0">RTE\PikaScript\pika_lvgl_lv_obj.h</instance>
@@ -1832,13 +1824,11 @@
           <targetInfo name="AC6-flash"/>
         </targetInfos>
       </file>
-      <file attr="config" category="sourceC" condition="NO_LVGL_Pack" name="pikascript-lib\pika_lvgl\pika_lvgl_lv_style_t.c" version="0.2.0">
-        <instance index="0">RTE\PikaScript\pika_lvgl_lv_style_t.c</instance>
+      <file attr="config" category="sourceC" condition="NO_LVGL_Pack" name="pikascript-lib\pika_lvgl\pika_lvgl_lv_style_t.c">
+        <instance index="0" removed="1">RTE\PikaScript\pika_lvgl_lv_style_t.c</instance>
         <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="pika_lvgl" Cvendor="PikaTech" Cversion="0.2.0" condition="Kernel"/>
         <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+        <targetInfos/>
       </file>
       <file attr="config" category="header" name="pikascript-api\pika_lvgl_lv_timer_t.h" version="1.10.6">
         <instance index="0">RTE\PikaScript\pika_lvgl_lv_timer_t.h</instance>
