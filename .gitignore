@@ -69,3 +69,11 @@ project/mdk/RTE/PikaScript/pikascript-lib
 project/mdk/RTE/PikaScript/pikascript-core
 project/mdk/RTE/PikaScript/.*
 project/mdk/RTE/LVGL/.*
+*@*
+project/mdk/RTE/PikaScript/pikaBeforBuild-keil.bat
+project/mdk/RTE/PikaScript/CMakeLists.txt
+project/mdk/RTE/PikaScript/README.md
+project/mdk/RTE/PikaScript/rust-msc-latest-win10.exe
+project/mdk/RTE/PikaScript/pikaPackage.exe
+project/mdk/RTE/PikaScript/clean.bat
+project/mdk/RTE/PikaScript/__instruction_table.cfg
