@@ -70,7 +70,7 @@
             <nStopU2X>0</nStopU2X>
           </BeforeCompile>
           <BeforeMake>
-            <RunUserProg1>1</RunUserProg1>
+            <RunUserProg1>0</RunUserProg1>
             <RunUserProg2>0</RunUserProg2>
             <UserProg1Name>RTE\PikaScript\pikaBeforBuild-keil.bat</UserProg1Name>
             <UserProg2Name></UserProg2Name>
@@ -848,9 +848,6 @@
           <GroupName>::LVGL</GroupName>
         </Group>
         <Group>
-          <GroupName>::PikaScript</GroupName>
-        </Group>
-        <Group>
           <GroupName>::Utilities</GroupName>
         </Group>
       </Groups>
@@ -866,8 +863,8 @@
           <targetInfo name="AC6-flash"/>
         </targetInfos>
       </component>
-      <component Cbundle="Performance Counter" Cclass="Utilities" Cgroup="perf_counter" Csub="Core" Cvariant="Library" Cvendor="GorgonMeducer" Cversion="1.9.8" condition="CMSIS-CORE">
-        <package name="perf_counter" schemaVersion="1.4" url="https://raw.githubusercontent.com/GorgonMeducer/perf_counter/CMSIS-Pack/cmsis-pack/" vendor="GorgonMeducer" version="1.9.8"/>
+      <component Cbundle="Performance Counter" Cclass="Utilities" Cgroup="perf_counter" Csub="Core" Cvariant="Library" Cvendor="GorgonMeducer" Cversion="1.9.9-dev" condition="CMSIS-CORE">
+        <package name="perf_counter" schemaVersion="1.4" url="https://raw.githubusercontent.com/GorgonMeducer/perf_counter/CMSIS-Pack/cmsis-pack/" vendor="GorgonMeducer" version="1.9.9-dev"/>
         <targetInfos>
           <targetInfo name="AC6-flash"/>
         </targetInfos>
@@ -891,43 +888,19 @@
         </targetInfos>
       </component>
       <component Cbundle="LVGL" Cclass="LVGL" Cgroup="lvgl" Csub="Essential" Cvendor="LVGL" Cversion="9.0.0-dev">
-        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.8"/>
+        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.9-alpha"/>
         <targetInfos>
           <targetInfo name="AC6-flash"/>
         </targetInfos>
       </component>
       <component Cbundle="LVGL" Cclass="LVGL" Cgroup="lvgl" Csub="Extra Themes" Cvendor="LVGL" Cversion="9.0.0-dev" condition="LVGL-Essential">
-        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.8"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
-      </component>
-      <component Cbundle="LVGL" Cclass="LVGL" Cgroup="lvgl" Csub="PikaScript Binding" Cvendor="LVGL" Cversion="0.2.0" condition="LVGL-Essential">
-        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.8"/>
+        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.9-alpha"/>
         <targetInfos>
           <targetInfo name="AC6-flash"/>
         </targetInfos>
       </component>
       <component Cbundle="LVGL" Cclass="LVGL" Cgroup="lvgl" Csub="Porting" Cvendor="LVGL" Cversion="9.0.0-dev" condition="LVGL-Essential">
-        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.8"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
-      </component>
-      <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6">
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
-      </component>
-      <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel">
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
-      </component>
-      <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="pika_lvgl" Cvendor="PikaTech" Cversion="0.2.0" condition="Kernel">
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.9-alpha"/>
         <targetInfos>
           <targetInfo name="AC6-flash"/>
         </targetInfos>
@@ -945,15 +918,15 @@
       <file attr="config" category="sourceC" name="lv_cmsis_pack.c" version="1.0.0">
         <instance index="0">RTE\LVGL\lv_cmsis_pack.c</instance>
         <component Cbundle="LVGL" Cclass="LVGL" Cgroup="lvgl" Csub="Essential" Cvendor="LVGL" Cversion="9.0.0-dev"/>
-        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.8"/>
+        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.9-alpha"/>
         <targetInfos>
           <targetInfo name="AC6-flash"/>
         </targetInfos>
       </file>
-      <file attr="config" category="preIncludeGlobal" name="lv_conf_cmsis.h" version="1.1.0">
+      <file attr="config" category="preIncludeGlobal" name="lv_conf_cmsis.h" version="1.1.1">
         <instance index="0">RTE\LVGL\lv_conf_cmsis.h</instance>
         <component Cbundle="LVGL" Cclass="LVGL" Cgroup="lvgl" Csub="Essential" Cvendor="LVGL" Cversion="9.0.0-dev"/>
-        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.8"/>
+        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.9-alpha"/>
         <targetInfos>
           <targetInfo name="AC6-flash"/>
         </targetInfos>
@@ -961,7 +934,7 @@
       <file attr="config" category="sourceC" name="examples\porting\lv_port_disp_template.c" version="1.0.1">
         <instance index="0">RTE\LVGL\lv_port_disp_template.c</instance>
         <component Cbundle="LVGL" Cclass="LVGL" Cgroup="lvgl" Csub="Porting" Cvendor="LVGL" Cversion="9.0.0-dev" condition="LVGL-Essential"/>
-        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.8"/>
+        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.9-alpha"/>
         <targetInfos>
           <targetInfo name="AC6-flash"/>
         </targetInfos>
@@ -969,7 +942,7 @@
       <file attr="config" category="header" name="examples\porting\lv_port_disp_template.h" version="1.0.1">
         <instance index="0">RTE\LVGL\lv_port_disp_template.h</instance>
         <component Cbundle="LVGL" Cclass="LVGL" Cgroup="lvgl" Csub="Porting" Cvendor="LVGL" Cversion="9.0.0-dev" condition="LVGL-Essential"/>
-        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.8"/>
+        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.9-alpha"/>
         <targetInfos>
           <targetInfo name="AC6-flash"/>
         </targetInfos>
@@ -977,7 +950,7 @@
       <file attr="config" category="sourceC" name="examples\porting\lv_port_fs_template.c" version="1.0.0">
         <instance index="0">RTE\LVGL\lv_port_fs_template.c</instance>
         <component Cbundle="LVGL" Cclass="LVGL" Cgroup="lvgl" Csub="Porting" Cvendor="LVGL" Cversion="9.0.0-dev" condition="LVGL-Essential"/>
-        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.8"/>
+        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.9-alpha"/>
         <targetInfos>
           <targetInfo name="AC6-flash"/>
         </targetInfos>
@@ -985,7 +958,7 @@
       <file attr="config" category="header" name="examples\porting\lv_port_fs_template.h" version="1.0.0">
         <instance index="0">RTE\LVGL\lv_port_fs_template.h</instance>
         <component Cbundle="LVGL" Cclass="LVGL" Cgroup="lvgl" Csub="Porting" Cvendor="LVGL" Cversion="9.0.0-dev" condition="LVGL-Essential"/>
-        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.8"/>
+        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.9-alpha"/>
         <targetInfos>
           <targetInfo name="AC6-flash"/>
         </targetInfos>
@@ -993,7 +966,7 @@
       <file attr="config" category="sourceC" name="examples\porting\lv_port_indev_template.c" version="1.0.0">
         <instance index="0">RTE\LVGL\lv_port_indev_template.c</instance>
         <component Cbundle="LVGL" Cclass="LVGL" Cgroup="lvgl" Csub="Porting" Cvendor="LVGL" Cversion="9.0.0-dev" condition="LVGL-Essential"/>
-        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.8"/>
+        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.9-alpha"/>
         <targetInfos>
           <targetInfo name="AC6-flash"/>
         </targetInfos>
@@ -1001,914 +974,706 @@
       <file attr="config" category="header" name="examples\porting\lv_port_indev_template.h" version="1.0.0">
         <instance index="0">RTE\LVGL\lv_port_indev_template.h</instance>
         <component Cbundle="LVGL" Cclass="LVGL" Cgroup="lvgl" Csub="Porting" Cvendor="LVGL" Cversion="9.0.0-dev" condition="LVGL-Essential"/>
-        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.8"/>
+        <package name="lvgl" schemaVersion="1.4" url="https://raw.githubusercontent.com/lvgl/lvgl/master/env_support/cmsis-pack/" vendor="LVGL" version="1.0.9-alpha"/>
         <targetInfos>
           <targetInfo name="AC6-flash"/>
         </targetInfos>
       </file>
-      <file attr="config" category="sourceC" name="pikascript-core\BaseObj.c" version="1.10.6">
-        <instance index="0">RTE\PikaScript\BaseObj.c</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="sourceC" name="pikascript-core\BaseObj.c" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\BaseObj.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.11.0"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-core\BaseObj.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\BaseObj.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-core\BaseObj.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\BaseObj.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.11.0"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="sourceC" name="pikascript-core\PikaCompiler.c" version="1.10.6">
-        <instance index="0">RTE\PikaScript\PikaCompiler.c</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="sourceC" name="pikascript-core\PikaCompiler.c" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\PikaCompiler.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.11.0"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-core\PikaCompiler.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\PikaCompiler.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-core\PikaCompiler.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\PikaCompiler.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.11.0"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-api\PikaDebug.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\PikaDebug.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-api\PikaDebug.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\PikaDebug.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-api\PikaDebug_Debuger.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\PikaDebug_Debuger.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-api\PikaDebug_Debuger.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\PikaDebug_Debuger.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="sourceC" name="pikascript-lib\PikaStdLib\PikaDebuger_Debuger.c" version="1.10.6">
-        <instance index="0">RTE\PikaScript\PikaDebuger_Debuger.c</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="sourceC" name="pikascript-lib\PikaStdLib\PikaDebuger_Debuger.c" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\PikaDebuger_Debuger.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-api\PikaMain.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\PikaMain.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-api\PikaMain.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\PikaMain.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="sourceC" name="pikascript-core\PikaObj.c" version="1.10.6">
-        <instance index="0">RTE\PikaScript\PikaObj.c</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="sourceC" name="pikascript-core\PikaObj.c" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\PikaObj.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.11.0"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-core\PikaObj.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\PikaObj.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-core\PikaObj.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\PikaObj.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.11.0"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="sourceC" name="pikascript-core\PikaParser.c" version="1.10.6">
-        <instance index="0">RTE\PikaScript\PikaParser.c</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="sourceC" name="pikascript-core\PikaParser.c" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\PikaParser.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.11.0"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-core\PikaParser.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\PikaParser.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-core\PikaParser.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\PikaParser.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.11.0"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="sourceC" name="pikascript-core\PikaPlatform.c" version="1.10.6">
-        <instance index="0">RTE\PikaScript\PikaPlatform.c</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="sourceC" name="pikascript-core\PikaPlatform.c" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\PikaPlatform.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.11.0"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-core\PikaPlatform.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\PikaPlatform.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-core\PikaPlatform.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\PikaPlatform.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.11.0"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-api\PikaStdData.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\PikaStdData.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-api\PikaStdData.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\PikaStdData.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="sourceC" name="pikascript-lib\PikaStdLib\PikaStdData_ByteArray.c" version="1.10.6">
-        <instance index="0">RTE\PikaScript\PikaStdData_ByteArray.c</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="sourceC" name="pikascript-lib\PikaStdLib\PikaStdData_ByteArray.c" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\PikaStdData_ByteArray.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-api\PikaStdData_ByteArray.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\PikaStdData_ByteArray.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-api\PikaStdData_ByteArray.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\PikaStdData_ByteArray.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="sourceC" name="pikascript-lib\PikaStdLib\PikaStdData_Dict.c" version="1.10.6">
-        <instance index="0">RTE\PikaScript\PikaStdData_Dict.c</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="sourceC" name="pikascript-lib\PikaStdLib\PikaStdData_Dict.c" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\PikaStdData_Dict.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-api\PikaStdData_Dict.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\PikaStdData_Dict.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-api\PikaStdData_Dict.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\PikaStdData_Dict.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="sourceC" name="pikascript-lib\PikaStdLib\PikaStdData_FILEIO.c" version="1.10.6">
-        <instance index="0">RTE\PikaScript\PikaStdData_FILEIO.c</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="sourceC" name="pikascript-lib\PikaStdLib\PikaStdData_FILEIO.c" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\PikaStdData_FILEIO.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-api\PikaStdData_FILEIO.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\PikaStdData_FILEIO.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-api\PikaStdData_FILEIO.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\PikaStdData_FILEIO.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="sourceC" name="pikascript-lib\PikaStdLib\PikaStdData_List.c" version="1.10.6">
-        <instance index="0">RTE\PikaScript\PikaStdData_List.c</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="sourceC" name="pikascript-lib\PikaStdLib\PikaStdData_List.c" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\PikaStdData_List.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-api\PikaStdData_List.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\PikaStdData_List.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-api\PikaStdData_List.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\PikaStdData_List.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="sourceC" name="pikascript-lib\PikaStdLib\PikaStdData_String.c" version="1.10.6">
-        <instance index="0">RTE\PikaScript\PikaStdData_String.c</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="sourceC" name="pikascript-lib\PikaStdLib\PikaStdData_String.c" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\PikaStdData_String.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-api\PikaStdData_String.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\PikaStdData_String.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-api\PikaStdData_String.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\PikaStdData_String.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-lib\PikaStdLib\PikaStdData_String_Util.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\PikaStdData_String_Util.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-lib\PikaStdLib\PikaStdData_String_Util.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\PikaStdData_String_Util.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="sourceC" name="pikascript-lib\PikaStdLib\PikaStdData_Tuple.c" version="1.10.6">
-        <instance index="0">RTE\PikaScript\PikaStdData_Tuple.c</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="sourceC" name="pikascript-lib\PikaStdLib\PikaStdData_Tuple.c" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\PikaStdData_Tuple.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-api\PikaStdData_Tuple.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\PikaStdData_Tuple.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-api\PikaStdData_Tuple.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\PikaStdData_Tuple.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="sourceC" name="pikascript-lib\PikaStdLib\PikaStdData_Utils.c" version="1.10.6">
-        <instance index="0">RTE\PikaScript\PikaStdData_Utils.c</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="sourceC" name="pikascript-lib\PikaStdLib\PikaStdData_Utils.c" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\PikaStdData_Utils.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-api\PikaStdData_Utils.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\PikaStdData_Utils.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-api\PikaStdData_Utils.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\PikaStdData_Utils.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-api\PikaStdData_dict_keys.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\PikaStdData_dict_keys.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-api\PikaStdData_dict_items.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\PikaStdData_dict_items.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-api\PikaStdLib.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\PikaStdLib.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-api\PikaStdData_dict_keys.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\PikaStdData_dict_keys.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="sourceC" name="pikascript-lib\PikaStdLib\PikaStdLib_MemChecker.c" version="1.10.6">
-        <instance index="0">RTE\PikaScript\PikaStdLib_MemChecker.c</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-api\PikaStdLib.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\PikaStdLib.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-api\PikaStdLib_MemChecker.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\PikaStdLib_MemChecker.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="sourceC" name="pikascript-lib\PikaStdLib\PikaStdLib_MemChecker.c" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\PikaStdLib_MemChecker.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="sourceC" name="pikascript-lib\PikaStdLib\PikaStdLib_RangeObj.c" version="1.10.6">
-        <instance index="0">RTE\PikaScript\PikaStdLib_RangeObj.c</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-api\PikaStdLib_MemChecker.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\PikaStdLib_MemChecker.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-api\PikaStdLib_RangeObj.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\PikaStdLib_RangeObj.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="sourceC" name="pikascript-lib\PikaStdLib\PikaStdLib_RangeObj.c" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\PikaStdLib_RangeObj.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="sourceC" name="pikascript-lib\PikaStdLib\PikaStdLib_StringObj.c" version="1.10.6">
-        <instance index="0">RTE\PikaScript\PikaStdLib_StringObj.c</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-api\PikaStdLib_RangeObj.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\PikaStdLib_RangeObj.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-api\PikaStdLib_StringObj.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\PikaStdLib_StringObj.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="sourceC" name="pikascript-lib\PikaStdLib\PikaStdLib_StringObj.c" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\PikaStdLib_StringObj.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="sourceC" name="pikascript-lib\PikaStdLib\PikaStdLib_SysObj.c" version="1.10.6">
-        <instance index="0">RTE\PikaScript\PikaStdLib_SysObj.c</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-api\PikaStdLib_StringObj.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\PikaStdLib_StringObj.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-api\PikaStdLib_SysObj.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\PikaStdLib_SysObj.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="sourceC" name="pikascript-lib\PikaStdLib\PikaStdLib_SysObj.c" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\PikaStdLib_SysObj.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-api\PikaStdTask.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\PikaStdTask.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-api\PikaStdLib_SysObj.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\PikaStdLib_SysObj.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="sourceC" name="pikascript-lib\PikaStdLib\PikaStdTask_Task.c" version="1.10.6">
-        <instance index="0">RTE\PikaScript\PikaStdTask_Task.c</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-api\PikaStdTask.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\PikaStdTask.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-api\PikaStdTask_Task.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\PikaStdTask_Task.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="sourceC" name="pikascript-lib\PikaStdLib\PikaStdTask_Task.c" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\PikaStdTask_Task.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="sourceC" name="pikascript-core\PikaVM.c" version="1.10.6">
-        <instance index="0">RTE\PikaScript\PikaVM.c</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-api\PikaStdTask_Task.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\PikaStdTask_Task.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-core\PikaVM.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\PikaVM.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="sourceC" name="pikascript-core\PikaVM.c" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\PikaVM.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.11.0"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-core\PikaVersion.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\PikaVersion.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-core\PikaVM.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\PikaVM.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.11.0"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="sourceC" name="pikascript-core\TinyObj.c" version="1.10.6">
-        <instance index="0">RTE\PikaScript\TinyObj.c</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-core\PikaVersion.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\PikaVersion.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.11.0"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-core\TinyObj.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\TinyObj.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="sourceC" name="pikascript-core\TinyObj.c" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\TinyObj.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.11.0"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="sourceC" name="pikascript-api\__asset_pikaModules_py_a.c" version="1.10.6">
-        <instance index="0">RTE\PikaScript\__asset_pikaModules_py_a.c</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-core\TinyObj.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\TinyObj.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.11.0"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-core\__instruction_def.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\__instruction_def.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="sourceC" name="pikascript-api\__asset_pikaModules_py_a.c" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\__asset_pikaModules_py_a.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="source" name="pikascript-core\__instruction_table.cfg" version="1.10.6">
-        <instance index="0">RTE\PikaScript\__instruction_table.cfg</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-core\__instruction_def.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\__instruction_def.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.11.0"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="sourceC" name="pikascript-api\__pikaBinding.c" version="1.10.6">
-        <instance index="0">RTE\PikaScript\__pikaBinding.c</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="source" name="pikascript-core\__instruction_table.cfg" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\__instruction_table.cfg</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.11.0"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="__pika_ooc.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\__pika_ooc.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="sourceC" name="pikascript-api\__pikaBinding.c" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\__pikaBinding.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
+      </file>
+      <file attr="config" category="header" name="pikascript-core\__pika_ooc.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\__pika_ooc.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.11.0"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
       <file attr="config" category="utility" name="clean.bat" version="1.0.1">
-        <instance index="0">RTE\PikaScript\clean.bat</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+        <instance index="0" removed="1">RTE\PikaScript\clean.bat</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.11.0"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="sourceC" name="pikascript-core\dataArg.c" version="1.10.6">
-        <instance index="0">RTE\PikaScript\dataArg.c</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="sourceC" name="pikascript-core\dataArg.c" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\dataArg.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.11.0"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-core\dataArg.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\dataArg.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-core\dataArg.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\dataArg.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.11.0"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="sourceC" name="pikascript-core\dataArgs.c" version="1.10.6">
-        <instance index="0">RTE\PikaScript\dataArgs.c</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="sourceC" name="pikascript-core\dataArgs.c" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\dataArgs.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.11.0"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-core\dataArgs.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\dataArgs.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-core\dataArgs.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\dataArgs.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.11.0"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="sourceC" name="pikascript-core\dataLink.c" version="1.10.6">
-        <instance index="0">RTE\PikaScript\dataLink.c</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="sourceC" name="pikascript-core\dataLink.c" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\dataLink.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.11.0"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-core\dataLink.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\dataLink.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-core\dataLink.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\dataLink.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.11.0"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="sourceC" name="pikascript-core\dataLinkNode.c" version="1.10.6">
-        <instance index="0">RTE\PikaScript\dataLinkNode.c</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="sourceC" name="pikascript-core\dataLinkNode.c" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\dataLinkNode.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.11.0"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-core\dataLinkNode.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\dataLinkNode.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-core\dataLinkNode.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\dataLinkNode.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.11.0"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="sourceC" name="pikascript-core\dataMemory.c" version="1.10.6">
-        <instance index="0">RTE\PikaScript\dataMemory.c</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="sourceC" name="pikascript-core\dataMemory.c" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\dataMemory.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.11.0"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-core\dataMemory.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\dataMemory.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-core\dataMemory.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\dataMemory.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.11.0"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="sourceC" name="pikascript-core\dataQueue.c" version="1.10.6">
-        <instance index="0">RTE\PikaScript\dataQueue.c</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="sourceC" name="pikascript-core\dataQueue.c" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\dataQueue.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.11.0"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-core\dataQueue.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\dataQueue.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-core\dataQueue.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\dataQueue.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.11.0"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="sourceC" name="pikascript-core\dataQueueObj.c" version="1.10.6">
-        <instance index="0">RTE\PikaScript\dataQueueObj.c</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="sourceC" name="pikascript-core\dataQueueObj.c" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\dataQueueObj.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.11.0"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-core\dataQueueObj.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\dataQueueObj.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-core\dataQueueObj.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\dataQueueObj.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.11.0"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="sourceC" name="pikascript-core\dataStack.c" version="1.10.6">
-        <instance index="0">RTE\PikaScript\dataStack.c</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="sourceC" name="pikascript-core\dataStack.c" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\dataStack.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.11.0"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-core\dataStack.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\dataStack.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-core\dataStack.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\dataStack.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.11.0"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="sourceC" name="pikascript-core\dataString.c" version="1.10.6">
-        <instance index="0">RTE\PikaScript\dataString.c</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="sourceC" name="pikascript-core\dataString.c" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\dataString.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.11.0"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-core\dataString.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\dataString.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-core\dataString.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\dataString.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.11.0"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="sourceC" name="pikascript-core\dataStrs.c" version="1.10.6">
-        <instance index="0">RTE\PikaScript\dataStrs.c</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="sourceC" name="pikascript-core\dataStrs.c" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\dataStrs.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.11.0"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-core\dataStrs.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\dataStrs.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-core\dataStrs.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\dataStrs.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.11.0"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="source" name="main.py" version="1.10.6">
-        <instance index="0">RTE\PikaScript\main.py</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="source" name="main.py" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\main.py</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.11.0"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
       <file attr="config" category="utility" name="pikaBeforBuild-keil.bat" version="1.1.0">
-        <instance index="0">RTE\PikaScript\pikaBeforBuild-keil.bat</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+        <instance index="0" removed="1">RTE\PikaScript\pikaBeforBuild-keil.bat</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.11.0"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
       <file attr="config" category="utility" name="pikaPackage.exe" version="1.0.0">
-        <instance index="0">RTE\PikaScript\pikaPackage.exe</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+        <instance index="0" removed="1">RTE\PikaScript\pikaPackage.exe</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.11.0"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="sourceC" name="pikascript-api\pikaScript.c" version="1.10.6">
-        <instance index="0">RTE\PikaScript\pikaScript.c</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="sourceC" name="pikascript-api\pikaScript.c" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\pikaScript.c</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-api\pikaScript.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\pikaScript.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-api\pikaScript.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\pikaScript.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-core\pika_config_valid.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\pika_config_valid.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-core\pika_config_valid.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\pika_config_valid.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.11.0"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
       <file attr="config" category="sourceC" condition="NO_LVGL_Pack" name="pikascript-lib\pika_lvgl\pika_lv_point_t.c" version="0.2.0">
         <instance index="0" removed="1">RTE\PikaScript\pika_lv_point_t.c</instance>
         <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="pika_lvgl" Cvendor="PikaTech" Cversion="0.2.0" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
         <targetInfos/>
       </file>
       <file attr="config" category="sourceC" condition="NO_LVGL_Pack" name="pikascript-lib\pika_lvgl\pika_lv_timer_t.c" version="0.2.0">
         <instance index="0" removed="1">RTE\PikaScript\pika_lv_timer_t.c</instance>
         <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="pika_lvgl" Cvendor="PikaTech" Cversion="0.2.0" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
         <targetInfos/>
       </file>
       <file attr="config" category="sourceC" condition="NO_LVGL_Pack" name="pikascript-lib\pika_lvgl\pika_lv_wegit.c" version="0.2.0">
         <instance index="0" removed="1">RTE\PikaScript\pika_lv_wegit.c</instance>
         <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="pika_lvgl" Cvendor="PikaTech" Cversion="0.2.0" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
         <targetInfos/>
       </file>
       <file attr="config" category="sourceC" condition="NO_LVGL_Pack" name="pikascript-lib\pika_lvgl\pika_lvgl.c" version="0.2.0">
         <instance index="0" removed="1">RTE\PikaScript\pika_lvgl.c</instance>
         <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="pika_lvgl" Cvendor="PikaTech" Cversion="0.2.0" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
         <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-api\pika_lvgl.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\pika_lvgl.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-api\pika_lvgl.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\pika_lvgl.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-api\pika_lvgl_ALIGN.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\pika_lvgl_ALIGN.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-api\pika_lvgl_ALIGN.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\pika_lvgl_ALIGN.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-api\pika_lvgl_ANIM.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\pika_lvgl_ANIM.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-api\pika_lvgl_ANIM.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\pika_lvgl_ANIM.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-api\pika_lvgl_EVENT.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\pika_lvgl_EVENT.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-api\pika_lvgl_EVENT.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\pika_lvgl_EVENT.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-api\pika_lvgl_OPA.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\pika_lvgl_OPA.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-api\pika_lvgl_OPA.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\pika_lvgl_OPA.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-api\pika_lvgl_PALETTE.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\pika_lvgl_PALETTE.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-api\pika_lvgl_PALETTE.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\pika_lvgl_PALETTE.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-api\pika_lvgl_STATE.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\pika_lvgl_STATE.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-api\pika_lvgl_STATE.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\pika_lvgl_STATE.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-api\pika_lvgl_arc.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\pika_lvgl_arc.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-api\pika_lvgl_arc.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\pika_lvgl_arc.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-api\pika_lvgl_bar.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\pika_lvgl_bar.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-api\pika_lvgl_bar.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\pika_lvgl_bar.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-api\pika_lvgl_btn.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\pika_lvgl_btn.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-api\pika_lvgl_btn.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\pika_lvgl_btn.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-api\pika_lvgl_checkbox.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\pika_lvgl_checkbox.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-api\pika_lvgl_checkbox.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\pika_lvgl_checkbox.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-api\pika_lvgl_dropdown.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\pika_lvgl_dropdown.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-api\pika_lvgl_dropdown.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\pika_lvgl_dropdown.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
       <file attr="config" category="sourceC" condition="NO_LVGL_Pack" name="pikascript-lib\pika_lvgl\pika_lvgl_indev_t.c" version="0.2.0">
         <instance index="0" removed="1">RTE\PikaScript\pika_lvgl_indev_t.c</instance>
         <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="pika_lvgl" Cvendor="PikaTech" Cversion="0.2.0" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
         <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-api\pika_lvgl_indev_t.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\pika_lvgl_indev_t.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-api\pika_lvgl_indev_t.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\pika_lvgl_indev_t.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-api\pika_lvgl_label.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\pika_lvgl_label.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-api\pika_lvgl_label.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\pika_lvgl_label.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-api\pika_lvgl_lv_color_t.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\pika_lvgl_lv_color_t.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-api\pika_lvgl_lv_color_t.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\pika_lvgl_lv_color_t.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
       <file attr="config" category="sourceC" condition="NO_LVGL_Pack" name="pikascript-lib\pika_lvgl\pika_lvgl_lv_event.c" version="0.2.0">
         <instance index="0" removed="1">RTE\PikaScript\pika_lvgl_lv_event.c</instance>
         <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="pika_lvgl" Cvendor="PikaTech" Cversion="0.2.0" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
         <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-api\pika_lvgl_lv_event.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\pika_lvgl_lv_event.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-api\pika_lvgl_lv_event.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\pika_lvgl_lv_event.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
       <file attr="config" category="sourceC" condition="NO_LVGL_Pack" name="pikascript-lib\pika_lvgl\pika_lvgl_lv_obj.c" version="0.2.0">
         <instance index="0" removed="1">RTE\PikaScript\pika_lvgl_lv_obj.c</instance>
         <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="pika_lvgl" Cvendor="PikaTech" Cversion="0.2.0" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
         <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-api\pika_lvgl_lv_obj.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\pika_lvgl_lv_obj.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-api\pika_lvgl_lv_obj.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\pika_lvgl_lv_obj.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
       <file attr="config" category="sourceC" condition="NO_LVGL_Pack" name="pikascript-lib\pika_lvgl\pika_lvgl_lv_style_t.c" version="0.2.0">
         <instance index="0" removed="1">RTE\PikaScript\pika_lvgl_lv_style_t.c</instance>
         <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="pika_lvgl" Cvendor="PikaTech" Cversion="0.2.0" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
         <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-api\pika_lvgl_lv_timer_t.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\pika_lvgl_lv_timer_t.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-api\pika_lvgl_lv_timer_t.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\pika_lvgl_lv_timer_t.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-api\pika_lvgl_point_t.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\pika_lvgl_point_t.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-api\pika_lvgl_point_t.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\pika_lvgl_point_t.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-api\pika_lvgl_roller.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\pika_lvgl_roller.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-api\pika_lvgl_roller.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\pika_lvgl_roller.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-api\pika_lvgl_slider.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\pika_lvgl_slider.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-api\pika_lvgl_slider.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\pika_lvgl_slider.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-api\pika_lvgl_style_t.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\pika_lvgl_style_t.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-api\pika_lvgl_style_t.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\pika_lvgl_style_t.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-api\pika_lvgl_switch.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\pika_lvgl_switch.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-api\pika_lvgl_switch.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\pika_lvgl_switch.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-api\pika_lvgl_table.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\pika_lvgl_table.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-api\pika_lvgl_table.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\pika_lvgl_table.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
-      <file attr="config" category="header" name="pikascript-api\pika_lvgl_textarea.h" version="1.10.6">
-        <instance index="0">RTE\PikaScript\pika_lvgl_textarea.h</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.10.6" condition="Kernel"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+      <file attr="config" category="header" name="pikascript-api\pika_lvgl_textarea.h" version="1.11.0">
+        <instance index="0" removed="1">RTE\PikaScript\pika_lvgl_textarea.h</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="PikaStdLib" Cvendor="PikaTech" Cversion="1.11.0" condition="Kernel"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
       <file attr="config" category="source" name="requestment.txt" version="1.1.0">
-        <instance index="0">RTE\PikaScript\requestment.txt</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+        <instance index="0" removed="1">RTE\PikaScript\requestment.txt</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.11.0"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
       <file attr="config" category="utility" name="rust-msc-latest-win10.exe" version="1.0.0">
-        <instance index="0">RTE\PikaScript\rust-msc-latest-win10.exe</instance>
-        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.10.6"/>
-        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.10.6"/>
-        <targetInfos>
-          <targetInfo name="AC6-flash"/>
-        </targetInfos>
+        <instance index="0" removed="1">RTE\PikaScript\rust-msc-latest-win10.exe</instance>
+        <component Cbundle="PikaScript" Cclass="PikaScript" Cgroup="PikaScript" Csub="Core" Cvendor="PikaTech" Cversion="1.11.0"/>
+        <package name="PikaScript" schemaVersion="1.4" url="https://gitee.com/Lyon1998/pikascript/raw/master/port/cmsis-pack/" vendor="PikaTech" version="1.11.0"/>
+        <targetInfos/>
       </file>
     </files>
   </RTE>

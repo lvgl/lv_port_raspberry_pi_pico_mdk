@@ -16,7 +16,7 @@
  */
 #define CMSIS_device_header "ARMCM0plus_MPU.h"
 
-/* GorgonMeducer.Performance Counter::Utilities:perf_counter:Core:Library:1.9.8 */
+/* GorgonMeducer.Performance Counter::Utilities:perf_counter:Core:Library:1.9.9-dev */
 #define __PERF_COUNTER__
 #define __PERF_COUNTER_CFG_USE_SYSTICK_WRAPPER__
 /* Keil.ARM Compiler::Compiler:Event Recorder:DAP:1.5.1 */
@@ -34,14 +34,6 @@
 /* LVGL.LVGL::LVGL:lvgl:Extra Themes:9.0.0-dev */
 /*! \brief use extra themes, widgets and layouts */
 #define RTE_GRAPHICS_LVGL_USE_EXTRA_THEMES
-/* LVGL.LVGL::LVGL:lvgl:PikaScript Binding:0.2.0 */
-/*! \brief enable PikaScrit Binding */
-#define LV_USE_PIKASCRIPT_BINDING          1
-/* PikaTech.PikaScript::PikaScript:PikaScript:Core:1.10.6 */
-#define RTE_Script_PikaScript
-/* PikaTech.PikaScript::PikaScript:PikaScript:pika_lvgl:0.2.0 */
-/*! \brief enable PikaScrit Binding */
-#define PIKA_USE_LVGL_BINDING          1
 
 
 #endif /* RTE_COMPONENTS_H */
