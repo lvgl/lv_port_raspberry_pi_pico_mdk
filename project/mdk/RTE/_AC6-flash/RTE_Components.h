@@ -16,9 +16,8 @@
  */
 #define CMSIS_device_header "ARMCM0plus_MPU.h"
 
-/* GorgonMeducer.Performance Counter::Utilities:perf_counter:Core:Library:1.9.9-dev */
+/* GorgonMeducer.Performance Counter::Utilities:perf_counter:Core:Library:1.9.9a */
 #define __PERF_COUNTER__
-#define __PERF_COUNTER_CFG_USE_SYSTICK_WRAPPER__
 /* Keil.ARM Compiler::Compiler:Event Recorder:DAP:1.5.1 */
 #define RTE_Compiler_EventRecorder
           #define RTE_Compiler_EventRecorder_DAP
@@ -28,10 +27,13 @@
 /* Keil.ARM Compiler::Compiler:I/O:STDOUT:EVR:1.2.0 */
 #define RTE_Compiler_IO_STDOUT          /* Compiler I/O: STDOUT */
           #define RTE_Compiler_IO_STDOUT_EVR      /* Compiler I/O: STDOUT EVR */
-/* LVGL.LVGL::LVGL:lvgl:Essential:9.0.0-dev */
+/* LVGL.LVGL::LVGL:lvgl:Demo:Widgets:8.3.5 */
+/*! \brief enable demo:widgets support */
+#define LV_USE_DEMO_WIDGETS         1
+/* LVGL.LVGL::LVGL:lvgl:Essential:8.3.5 */
 /*! \brief Enable LVGL */
 #define RTE_GRAPHICS_LVGL
-/* LVGL.LVGL::LVGL:lvgl:Extra Themes:9.0.0-dev */
+/* LVGL.LVGL::LVGL:lvgl:Extra Themes:8.3.5 */
 /*! \brief use extra themes, widgets and layouts */
 #define RTE_GRAPHICS_LVGL_USE_EXTRA_THEMES
 
