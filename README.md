@@ -23,7 +23,7 @@ cd pico-mdk
 
 git clone https://github.com/lvgl/lv_port_raspberry_pi_pico_mdk.git .
 
-git submodule update --remote --init
+git submodule update --init
 ```
 
 
